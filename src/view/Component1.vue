@@ -1,6 +1,6 @@
 <template>
   <div class="component1">
-    <h2>Component1</h2>
+    <h2>制作物</h2>
   </div>
 </template>
 

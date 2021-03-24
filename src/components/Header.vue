@@ -11,7 +11,7 @@
           elevation="2"
           outlined
           exact
-          >menu1</v-btn
+          >SAMPLE</v-btn
         >
       </li>
       <li>
@@ -22,7 +22,7 @@
           elevation="2"
           outlined
           exact
-          >menu2</v-btn
+          >SAMPLE2</v-btn
         >
       </li>
       <li>
@@ -33,7 +33,7 @@
           elevation="2"
           outlined
           exact
-          >menu3</v-btn
+          >SAMPLE3</v-btn
         >
       </li>
     </ul>
@@ -88,6 +88,7 @@ export default {
       margin-right: 25px;
       & .v-btn {
         background-color: white;
+        padding: 0 5px;
         &.btn {
           background-color: rgb(59, 187, 127);
         }
@@ -95,7 +96,7 @@ export default {
     }
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   .header {
     position: relative;
     flex-direction: column;
@@ -109,11 +110,7 @@ export default {
       background-color: white;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
-      z-index: 200;
     }
-  }
-  .v-btn {
-    z-index: 0;
   }
 }
 </style>

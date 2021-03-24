@@ -2,22 +2,21 @@
   <div class="top">
     <h2>学んできたもの</h2>
     <div class="items">
-      <transition name="trans-x" mode="out-in">
-        <v-hover>
-          <template v-slot:default="{ hover }">
-            <v-card :elevation="hover ? 24 : 6" class="mx-auto pa-2">
-              <div class="learn">
-                <img src="CSS3.png" alt="CSS3" />
-                <p>CSS 3</p>
-                <p>
-                  本・Youtube・Udemy<br />ドットインストール・Progate
-                  CODEPREPから学習しました
-                </p>
-              </div>
-            </v-card>
-          </template>
-        </v-hover>
-      </transition>
+      <v-hover>
+        <template v-slot:default="{ hover }">
+          <v-card :elevation="hover ? 24 : 6" class="mx-auto pa-2">
+            <div class="learn">
+              <img src="CSS3.png" alt="CSS3" />
+              <p>CSS 3</p>
+              <p>
+                本・Youtube・Udemy<br />ドットインストール・Progate
+                CODEPREPから学習しました
+              </p>
+            </div>
+          </v-card>
+        </template>
+      </v-hover>
+
       <v-hover>
         <template v-slot:default="{ hover }">
           <v-card :elevation="hover ? 24 : 6" class="mx-auto pa-2">
@@ -32,6 +31,7 @@
           </v-card>
         </template>
       </v-hover>
+
       <v-hover>
         <template v-slot:default="{ hover }">
           <v-card :elevation="hover ? 24 : 6" class="mx-auto pa-2">
@@ -46,6 +46,7 @@
           </v-card>
         </template>
       </v-hover>
+
       <v-hover>
         <template v-slot:default="{ hover }">
           <v-card :elevation="hover ? 24 : 6" class="mx-auto pa-2">
@@ -122,7 +123,7 @@ export default {
         width: 250px;
         height: 350px;
         & img {
-        // transform: translateX(10px);
+          // transform: translateX(10px);
           margin-top: 20px;
           height: 150px;
           background-color: white;
@@ -130,13 +131,6 @@ export default {
       }
     }
   }
-}
-.trans-x-enter {
-  transition: translate;
-  transform: translateX(-10px);
-}
-.trans-x-enter-active {
-  transform: translateX(10px);
 }
 
 @media (max-width: 700px) {
