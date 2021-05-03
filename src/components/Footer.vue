@@ -16,7 +16,7 @@ footer {
   text-align: center;
   padding: 20px 0px;
 }
-@media (max-width: 750px) {
+@media (max-width: 600px) {
   footer {
     margin-bottom: 56px;
   }

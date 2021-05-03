@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "hooper": "^0.3.4",
     "node-sass": "^4.14.1",
     "sass-loader": "^10.1.1",
+    "swiper": "^6.5.9",
     "vue": "^2.6.11",
+    "vue-awesome-swiper": "^4.1.1",
     "vuetify": "^2.4.0"
   },
   "devDependencies": {

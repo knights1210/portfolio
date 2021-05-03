@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <router-link to="/" exact><h1>My Port Folio</h1></router-link>
-    <p>駆け出しエンジニア</p>
+    <p>未経験エンジニア</p>
     <ul class="menu">
       <li>
         <v-btn
@@ -27,7 +27,7 @@
       </li>
       <li>
         <v-btn
-          to="/component3"
+          to="/swiper"
           active-class="btn"
           color="blue-grey darken-4"
           elevation="2"
@@ -55,7 +55,7 @@ export default {
 .header {
   position: fixed;
   display: flex;
-  background-color: gray;
+  background-color: rgb(59, 86, 136);
   // opacity: 0.7;
   top: 0px;
   height: 58px;
@@ -77,6 +77,7 @@ export default {
     line-height: 58px;
     font-size: 13px;
     white-space: pre;
+    color: white;
   }
   & .menu {
     display: flex;
@@ -90,13 +91,13 @@ export default {
         background-color: white;
         padding: 0 5px;
         &.btn {
-          background-color: rgb(59, 187, 127);
+          background-color: rgb(32, 197, 148);
         }
       }
     }
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 600px) {
   .header {
     position: relative;
     flex-direction: column;
@@ -105,7 +106,7 @@ export default {
     & .menu {
       position: fixed;
       bottom: 0;
-      width: 100vw;
+      width: 100%;
       padding-bottom: 10px;
       background-color: white;
       -webkit-backface-visibility: hidden;
