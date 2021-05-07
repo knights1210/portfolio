@@ -27,9 +27,11 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap");
-html {
+* {
+  box-sizing: border-box;
   font-family: "Noto Sans JP", sans-serif;
 }
+
 .fade-enter,
 .fade-leave-to {
   opacity: 0;

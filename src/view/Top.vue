@@ -2,89 +2,19 @@
   <div class="top">
     <h2>学んできたもの</h2>
     <div class="items">
-      <v-hover>
-        <template v-slot:default="{ hover }">
-          <v-card :elevation="hover ? 24 : 6" class="mx-auto pa-2">
-            <div class="learn">
-              <img src="CSS3.png" alt="CSS3" />
-              <p>CSS 3</p>
-              <p>
-                本・Youtube・Udemy<br />ドットインストール・Progate
-                CODEPREPから学習しました
-              </p>
-            </div>
-          </v-card>
-        </template>
-      </v-hover>
-
-      <v-hover>
-        <template v-slot:default="{ hover }">
-          <v-card :elevation="hover ? 24 : 6" class="mx-auto pa-2">
-            <div class="learn">
-              <img src="HTML5.png" alt="HTML5" />
-              <p>HTML 5</p>
-              <p>
-                本・Youtube・Udemy<br />ドットインストール・Progate
-                CODEPREPから学習しました
-              </p>
-            </div>
-          </v-card>
-        </template>
-      </v-hover>
-
-      <v-hover>
-        <template v-slot:default="{ hover }">
-          <v-card :elevation="hover ? 24 : 6" class="mx-auto pa-2">
-            <div class="learn">
-              <img src="Javascript.png" alt="Javascript" />
-              <p>Javascript</p>
-              <p>
-                Youtube・Udemy<br />ドットインストール・Progate
-                CODEPREPから学習しました
-              </p>
-            </div>
-          </v-card>
-        </template>
-      </v-hover>
-
-      <v-hover>
-        <template v-slot:default="{ hover }">
-          <v-card :elevation="hover ? 24 : 6" class="mx-auto pa-2">
-            <div class="learn">
-              <img src="PHP.png" alt="PHP" />
-              <p>PHP</p>
-              <p>
-                本・Udemy<br />ドットインストール・Progate
-                CODEPREPから学習しました
-              </p>
-            </div>
-          </v-card>
-        </template>
-      </v-hover>
-
-      <v-hover>
-        <template v-slot:default="{ hover }">
-          <v-card :elevation="hover ? 24 : 6" class="mx-auto pa-2">
-            <div class="learn">
-              <img src="React.png" alt="React" />
-              <p>React</p>
-              <p>Udemy<br />Progate CODEPREPから学習しました</p>
-            </div>
-          </v-card>
-        </template>
-      </v-hover>
-
-      <v-hover>
-        <template v-slot:default="{ hover }">
-          <v-card :elevation="hover ? 24 : 6" class="mx-auto pa-2">
-            <div class="learn">
-              <img src="Vue.png" alt="Vue" />
-              <p>Vue</p>
-              <p>Udemyから学習しました</p>
-            </div>
-          </v-card>
-        </template>
-      </v-hover>
+      <template v-for="(learn, i) in learns">
+        <v-hover :key="i">
+          <template v-slot:default="{ hover }">
+            <v-card :elevation="hover ? 24 : 6" class="mx-auto pa-2">
+              <div class="learn">
+                <img :src="learn.src" :alt="learn.name" />
+                <p>{{ learn.name }}</p>
+                <p>{{ learn.coments }}</p>
+              </div>
+            </v-card>
+          </template>
+        </v-hover>
+      </template>
     </div>
   </div>
 </template>
@@ -93,14 +23,46 @@
 export default {
   name: "TopPage",
   data() {
-    return {};
+    return {
+      learns: [
+        { name: "Vue", src: "Vue.png", coments: "Udemyから学習しました" },
+        {
+          name: "CSS 3",
+          src: "CSS3.png",
+          coments:
+            "本・Youtube・Udemy ドットインストール・Progate CODEPREPから学習しました",
+        },
+        {
+          name: "HTML 5",
+          src: "HTML5.png",
+          coments:
+            "本・Youtube・Udemyドットインストール・Progate CODEPREPから学習しました",
+        },
+        {
+          name: "Javascript",
+          src: "Javascript.png",
+          coments:
+            "Youtube・Udemy ドットインストール・Progate CODEPREPから学習しました",
+        },
+        {
+          name: "PHP",
+          src: "PHP.png",
+          coments:
+            "本・Udemy ドットインストール・Progate CODEPREPから学習しました",
+        },
+        {
+          name: "React",
+          src: "React.png",
+          coments: "Udemy Progate CODEPREPから学習しました",
+        },
+      ],
+    };
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .top {
-  // background-image: url("~@/assets/cim0302.jpg");
   background-size: cover;
   min-height: 100vh;
   height: auto;
@@ -123,7 +85,6 @@ export default {
         width: 250px;
         height: 350px;
         & img {
-          // transform: translateX(10px);
           margin-top: 20px;
           height: 150px;
           background-color: white;

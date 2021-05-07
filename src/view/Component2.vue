@@ -5,9 +5,8 @@
 </template>
 
 <script>
-
 export default {
-  name:'Component2'
+  name: "Component2",
 };
 </script>
 
@@ -19,5 +18,4 @@ export default {
     text-align: center;
   }
 }
-
 </style>

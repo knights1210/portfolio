@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <small>&copy;footer.com</small>
+    <small>&copy;T.Kishikawa</small>
   </footer>
 </template>
 

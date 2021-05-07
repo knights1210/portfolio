@@ -11,7 +11,7 @@
           elevation="2"
           outlined
           exact
-          >SAMPLE</v-btn
+          >SAMPLE1</v-btn
         >
       </li>
       <li>
@@ -27,7 +27,7 @@
       </li>
       <li>
         <v-btn
-          to="/swiper"
+          to="/component3"
           active-class="btn"
           color="blue-grey darken-4"
           elevation="2"
@@ -71,6 +71,9 @@ export default {
     letter-spacing: 3px;
     font-family: "Ranchers", cursive;
     white-space: pre;
+    color: white;
+    text-shadow: 2px 2px 0 black;
+    
   }
   & p {
     margin: 0;
@@ -81,12 +84,13 @@ export default {
   }
   & .menu {
     display: flex;
+      justify-content: space-between;
     & a {
       text-decoration: none;
     }
     & li {
-      margin-top: 10px;
-      margin-right: 25px;
+      margin: 10px 25px;
+      // margin-right: 25px;
       & .v-btn {
         background-color: white;
         padding: 0 5px;
@@ -107,11 +111,15 @@ export default {
       position: fixed;
       bottom: 0;
       width: 100%;
-      padding-bottom: 10px;
+      // padding-bottom: 10px;
       background-color: white;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
     }
+  }
+  .v-application ol,
+  .v-application ul {
+    padding: 0;
   }
 }
 </style>

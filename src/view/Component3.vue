@@ -6,14 +6,14 @@
 
 <script>
 export default {
-  name: 'Component3'
+  name: 'Component3',
 };
 </script>
 
 <style lang="scss" scoped>
 .component3 {
-  margin-top: 58px;
   background-color: lightpink;
+  margin-top: 58px;
   & h2 {
     text-align: center;
   }
