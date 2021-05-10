@@ -20,7 +20,7 @@
       <h2>PHOTO GALLERY</h2>
       <div class="main-content">
         <template v-for="(content, i) in contents">
-          <div class="card" :key="i" @click="open">
+          <div class="card" :key="i">
             <div class="item-name">{{ content.name }}</div>
             <div class="img-box">
               <img :src="content.src" :alt="content.name" />
@@ -42,10 +42,9 @@
 <script>
 import gridLayout from "../components/grid.vue";
 export default {
+  
   methods: {
-    open: function() {
-      console.log(this);
-    },
+    
   },
   data() {
     return {
@@ -127,6 +126,7 @@ export default {
 * {
   box-sizing: border-box;
 }
+
 .component1 {
   max-width: 1100px;
   margin: 58px auto;
