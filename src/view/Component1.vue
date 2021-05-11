@@ -17,7 +17,7 @@
     </div>
 
     <main>
-      <h2>PHOTO GALLERY</h2>
+      <h2 class="sub-title">PHOTO GALLERY</h2>
       <div class="main-content">
         <template v-for="(content, i) in contents">
           <div class="card" :key="i">
@@ -35,16 +35,45 @@
         </template>
       </div>
     </main>
-    <gridLayout />
+    <gridLayout ref="child1" />
   </div>
 </template>
 
 <script>
 import gridLayout from "../components/grid.vue";
+// import { gsap } from "gsap";
+
+
+
 export default {
-  
-  methods: {
+  mounted() {
+    //greensock
+    // gsap.to('.sub-title', {x: 500, duration: 3})
     
+    const options = {
+      root: null,
+      rootMargin: "0px 0px -100px",
+      threshold: 0,
+    };
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((target) => this.onIntersect(target, options));
+    const subTitle = document.querySelectorAll(".sub-title");
+    subTitle.forEach((target) => this.onIntersect(target, options));
+  },
+  methods: {
+    mounted(){
+  },
+    onIntersect(target, options = {}) {
+      const observer = new IntersectionObserver(this.addClass, options);
+      observer.observe(target);
+    },
+    addClass(entries) {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add("show");
+        }
+      }
+    },
   },
   data() {
     return {
@@ -130,15 +159,21 @@ export default {
 .component1 {
   max-width: 1100px;
   margin: 58px auto;
-  & h2 {
-    text-align: center;
-  }
+  overflow: hidden;
   & main {
-    & h2 {
+    & .sub-title {
       background-color: rgb(32, 197, 148);
+      text-align: center;
       padding: 10px;
       font-family: "Itim", cursive;
       text-shadow: 1px 1px 0 white;
+      transition: all 0.5s ease;
+      opacity: 0;
+      transform: translateX(200px);
+      &.show {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
     & .main-content {
       display: flex;
@@ -151,6 +186,12 @@ export default {
         height: 400px;
         margin: 5px auto;
         transition: all 0.5s 0s ease;
+        opacity: 0;
+        transform: translateY(40px);
+        &.show {
+          opacity: 1;
+          transform: translateY(0);
+        }
 
         &:hover {
           border: 1px solid rgb(59, 86, 136);
