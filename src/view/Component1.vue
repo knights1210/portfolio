@@ -23,33 +23,58 @@
           <div class="card" :key="i">
             <div class="item-name">{{ content.name }}</div>
             <div class="img-box">
-              <img :src="content.src" :alt="content.name" />
+              <a
+                :href="content.src"
+                data-lightbox="group1"
+                :data-title="[content.detail, content.hanakotoba]"
+              >
+                <img :src="content.src" :alt="content.name" />
+              </a>
             </div>
             <div class="details">
               <p>
                 {{ content.detail }}
               </p>
-              <p>{{ content.hanakotoba }}</p>
+              <p>
+                <span class="marker">{{ content.hanakotoba }}</span>
+              </p>
             </div>
           </div>
         </template>
       </div>
     </main>
-    <gridLayout ref="child1" />
+    <gridLayout />
+    <div class="wrapper">
+      <div class="box"></div>
+    </div>
   </div>
 </template>
 
 <script>
 import gridLayout from "../components/grid.vue";
-// import { gsap } from "gsap";
-
-
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
   mounted() {
     //greensock
-    // gsap.to('.sub-title', {x: 500, duration: 3})
-    
+    gsap.to(".sub-title", {
+      scrollTrigger: ".sub-title",
+      opacity: 1,
+      duration: 2,
+      x: 0,
+      ease: "bounce",
+      markers: true,
+    });
+    gsap.to(".sub-title1", {
+      scrollTrigger: ".sub-title1",
+      opacity: 1,
+      duration: 2,
+      x: 0,
+      ease: "bounce",
+    });
+
     const options = {
       root: null,
       rootMargin: "0px 0px -100px",
@@ -57,20 +82,16 @@ export default {
     };
     const cards = document.querySelectorAll(".card");
     cards.forEach((target) => this.onIntersect(target, options));
-    const subTitle = document.querySelectorAll(".sub-title");
-    subTitle.forEach((target) => this.onIntersect(target, options));
   },
   methods: {
-    mounted(){
-  },
     onIntersect(target, options = {}) {
       const observer = new IntersectionObserver(this.addClass, options);
       observer.observe(target);
     },
     addClass(entries) {
-      for (const e of entries) {
-        if (e.isIntersecting) {
-          e.target.classList.add("show");
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
         }
       }
     },
@@ -167,17 +188,12 @@ export default {
       padding: 10px;
       font-family: "Itim", cursive;
       text-shadow: 1px 1px 0 white;
-      transition: all 0.5s ease;
+      transform: translateX(500px);
       opacity: 0;
-      transform: translateX(200px);
-      &.show {
-        opacity: 1;
-        transform: translateX(0);
-      }
     }
     & .main-content {
-      display: flex;
       padding: 10px;
+      display: flex;
       flex-wrap: wrap;
       & .card {
         background-color: white;
@@ -185,12 +201,15 @@ export default {
         width: 200px;
         height: 400px;
         margin: 5px auto;
-        transition: all 0.5s 0s ease;
+        transition: all 1s 0.3s ease;
         opacity: 0;
         transform: translateY(40px);
         &.show {
           opacity: 1;
           transform: translateY(0);
+          & a {
+            text-decoration: none;
+          }
         }
 
         &:hover {
@@ -234,6 +253,36 @@ export default {
       }
     }
   }
+  .marker {
+    background: linear-gradient(transparent 60%, #ee9e9e 60%);
+    font-weight: bold;
+    overflow: hidden;
+  }
+  .wrapper {
+      // overflow: hidden;
+    & .box {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: black;
+      animation: jump-box 1s;
+      animation-iteration-count: infinite;
+    }
+  }
+  @keyframes jump-box {
+    0%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    30% {
+      height: 8px;
+    }
+    40% {
+      transform: translateY(10px);
+    }
+  }
+
   .hooper-slide {
     background-color: #62caaa;
     padding: 20px;
@@ -253,6 +302,13 @@ export default {
 @media (max-width: 600px) {
   .component1 {
     margin: 0 auto;
+    main {
+      .main-content {
+        .card {
+          width: unset;
+        }
+      }
+    }
   }
 }
 </style>
