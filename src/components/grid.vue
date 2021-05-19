@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 class="sub-title1">Grid Items</h2>
-    <div class="container">
+    <div class="container" :style="{'background-image': 'url(' + variable +')' }">
       <div class="grid-items">
         <swiper class="swiper" :options="swiperOption">
           <template v-for="(item, i) in gridItems">
@@ -14,6 +14,7 @@
                       '.jpg')
                   "
                   data-lightbox="group"
+                  :data-title="item.name"
                 >
                   <img
                     class="image"
@@ -33,6 +34,7 @@
           <div class="swiper-button-next" slot="button-next"></div>
         </swiper>
       </div>
+    <p>※当ページの画像は無断転載禁止です</p>
     </div>
   </div>
 </template>
@@ -42,10 +44,12 @@ import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 
 export default {
+  name: 'gridLayout',
   components: {
     Swiper,
     SwiperSlide,
   },
+  props: ['variable'],
   mounted() {
     const options = {
       root: null,
@@ -105,15 +109,16 @@ export default {
         },
       },
       gridItems: [
-        { name: "neko1" },
-        { name: "neko2" },
-        { name: "neko3" },
-        { name: "hana1" },
-        { name: "hana2" },
-        { name: "hana3" },
-        { name: "hana4" },
-        { name: "neko5" },
-        { name: "neko6" },
+        { name: "野良猫ちゃん1" },
+        { name: "野良猫ちゃん2" },
+        { name: "野良猫ちゃん3" },
+        { name: "キンセンカ" },
+        { name: "八重桜" },
+        { name: "アリッサム" },
+        { name: "コデマリ" },
+        { name: "野良猫ちゃん5" },
+        { name: "野良猫ちゃん6" },
+        { name: "オキザリス" },
       ],
     };
   },
@@ -150,7 +155,7 @@ export default {
   .grid-items {
     margin-top: 6%;
     margin-bottom: 6%;
-    // background-color: yellowgreen;
+    background-color: white;
     .grid-item {
       width: 200px;
       margin: 4% auto;

@@ -902,6 +902,11 @@
     "@babel/helper-validator-identifier" "^7.14.0"
     to-fast-properties "^2.0.0"
 
+"@fortawesome/vue-fontawesome@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-2.0.2.tgz#5b86cd2fb7b4c17e5dede722c1c2855c97eceaea"
+  integrity sha512-ecpKSBUWXsxRJVi/dbOds4tkKwEcBQ1JSDZFzE2jTFpF8xIh3OgTX8POIor6bOltjibr3cdEyvnDjecMwUmxhQ==
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
@@ -1415,7 +1420,7 @@
   resolved "https://registry.yarnpkg.com/@vue/cli-plugin-vuex/-/cli-plugin-vuex-4.5.13.tgz#98646d8bc1e69cf6c6a6cba2fed3eace0356c360"
   integrity sha512-I1S9wZC7iI0Wn8kw8Zh+A2Qkf6s1M6vTGBkx8boXjuzfwEEyEHRxadsVCecZc8Mkpydo0nykj+MyYF96TKFuVA==
 
-"@vue/cli-service@~4.5.0":
+"@vue/cli-service@^4.5.13":
   version "4.5.13"
   resolved "https://registry.yarnpkg.com/@vue/cli-service/-/cli-service-4.5.13.tgz#a09e684a801684b6e24e5414ad30650970eec9ed"
   integrity sha512-CKAZN4iokMMsaUyJRU22oUAz3oS/X9sVBSKAF2/shFBV5xh3jqAlKl8OXZYz4cXGFLA6djNuYrniuLAo7Ku97A==
@@ -5936,6 +5941,11 @@ nan@^2.12.1, nan@^2.13.2:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"
   integrity sha512-M2ufzIiINKCuDfBSAUr1vWQ+vuVcA9kqx8JJUsbQi6yf1uGRyb7HfpdfUr5qLXf3B/t8dPvcjhKMmlfnP47EzQ==
 
+nanoid@^3.1.23:
+  version "3.1.23"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.23.tgz#f744086ce7c2bc47ee0a8472574d5c78e4183a81"
+  integrity sha512-FiB0kzdP0FFVGDKlRLEQ1BgDzU87dy5NnzjeW9YZNt+/c3+q82EQDUwniSAUxp/F0gFNI1ZhKU1FqYsMuqZVnw==
+
 nanomatch@^1.2.9:
   version "1.2.13"
   resolved "https://registry.yarnpkg.com/nanomatch/-/nanomatch-1.2.13.tgz#b87a8aa4fc0de8fe6be88895b38983ff265bd119"
@@ -7020,6 +7030,15 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.27, postcss@^7.0.3
     chalk "^2.4.2"
     source-map "^0.6.1"
     supports-color "^6.1.0"
+
+postcss@^8.2.10:
+  version "8.2.15"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.15.tgz#9e66ccf07292817d226fc315cbbf9bc148fbca65"
+  integrity sha512-2zO3b26eJD/8rb106Qu2o7Qgg52ND5HPjcyQiK2B98O388h43A448LCslC0dI2P97wCAQRJsFvwTRcXxTKds+Q==
+  dependencies:
+    colorette "^1.2.2"
+    nanoid "^3.1.23"
+    source-map "^0.6.1"
 
 prelude-ls@~1.1.2:
   version "1.1.2"

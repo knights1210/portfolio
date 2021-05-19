@@ -18,7 +18,7 @@
 
     <main>
       <h2 class="sub-title">PHOTO GALLERY</h2>
-      <div class="main-content">
+      <div class="main-content" :style="{'background-image': 'url(' + bgImage +')' }">
         <template v-for="(content, i) in contents">
           <div class="card" :key="i">
             <div class="item-name">{{ content.name }}</div>
@@ -43,10 +43,7 @@
         </template>
       </div>
     </main>
-    <gridLayout />
-    <div class="wrapper">
-      <div class="box"></div>
-    </div>
+    <grid-layout :variable="bgImage"/>
   </div>
 </template>
 
@@ -58,6 +55,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default {
   mounted() {
+
     //greensock
     gsap.to(".sub-title", {
       scrollTrigger: ".sub-title",
@@ -98,6 +96,7 @@ export default {
   },
   data() {
     return {
+      bgImage: require('@/assets/img/4804246_m.jpg'),
       items: [
         { src: require("@/assets/img/slider_item/bayside_place.jpg") },
         { src: require("@/assets/img/slider_item/tower.jpg") },
@@ -179,7 +178,7 @@ export default {
 
 .component1 {
   max-width: 1100px;
-  margin: 58px auto;
+  margin: 0 auto;
   overflow: hidden;
   & main {
     & .sub-title {
@@ -195,6 +194,7 @@ export default {
       padding: 10px;
       display: flex;
       flex-wrap: wrap;
+      background-repeat: repeat;
       & .card {
         background-color: white;
         border: 1px solid rgb(32, 197, 148);
@@ -258,30 +258,32 @@ export default {
     font-weight: bold;
     overflow: hidden;
   }
-  .wrapper {
-      // overflow: hidden;
-    & .box {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      background-color: black;
-      animation: jump-box 1s;
-      animation-iteration-count: infinite;
-    }
-  }
-  @keyframes jump-box {
-    0%,
-    80%,
-    100% {
-      transform: translateY(0);
-    }
-    30% {
-      height: 8px;
-    }
-    40% {
-      transform: translateY(10px);
-    }
-  }
+  // .wrapper {
+  //     // overflow: hidden;
+  //   & .box {
+  //     display: inline-block;
+  //     width: 10px;
+  //     height: 10px;
+  //     background-color: black;
+  //     animation: jump-box 1s;
+  //     animation-iteration-count: infinite;
+  //   }
+  // }
+  // @keyframes jump-box {
+  //   0%,
+  //   40%,
+  //   60%,
+  //   100% {
+  //     height: 10px;
+  //     transform: translateY(0);
+  //   }
+  //   20% {
+  //     transform: translateY(-20px);
+  //   }
+  //   50% {
+  //     height: 6px;
+  //   }
+  // }
 
   .hooper-slide {
     background-color: #62caaa;

@@ -19,7 +19,6 @@ export default {
   name: "App",
   components: {
     Header,
-    
     Footer,
   },
 };
@@ -40,7 +39,7 @@ export default {
 .fade-leave-active {
   transition: opacity 0.5s;
 }
-// .fade-enter-to {
-//   opacity: 1;
-// }
+.fade-enter-to {
+  opacity: 1;
+}
 </style>
