@@ -63,7 +63,6 @@ export default {
       duration: 2,
       x: 0,
       ease: "bounce",
-      markers: true,
     });
     gsap.to(".sub-title1", {
       scrollTrigger: ".sub-title1",

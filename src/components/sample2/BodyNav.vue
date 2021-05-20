@@ -7,6 +7,7 @@
       <router-link to="/"><li>お食事</li></router-link>
       <router-link to="/"><li>プラン</li></router-link>
     </ul>
+    <hr>
   </div>
 </template>
 
@@ -23,6 +24,7 @@ export default {
   & .body-nav {
     justify-content: space-between;
     display: flex;
+    margin-bottom: 10px;
     & a {
       text-decoration: none;
       & li {

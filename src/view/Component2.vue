@@ -11,15 +11,18 @@
       </div>
     </div>
     <Body-nav />
+    <About />
   </div>
 </template>
 
 <script>
 import BodyNav from "../components/sample2/BodyNav.vue";
+import About from "../components/sample2/About.vue";
 export default {
   name: "Component2",
   components: {
     BodyNav,
+    About,
   },
 };
 </script>
@@ -34,7 +37,7 @@ export default {
   background-size: cover;
   position: relative;
   & .container {
-    width: 1100px;
+    max-width: 1100px;
     margin: 0 auto;
     & .transition {
       position: absolute;
