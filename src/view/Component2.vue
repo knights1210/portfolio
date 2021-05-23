@@ -7,23 +7,47 @@
       </div>
       <div class="top-content container">
         <h2>PortFolio SAMPLE 2</h2>
-        <p>テスト文章テスト文章テスト文章テスト文章テスト文章テスト文章</p>
+        <p>都会の喧騒から離れて、当旅館で癒やしてみませんか？</p>
       </div>
     </div>
     <Body-nav />
-    <About />
+    <router-view></router-view>
+    <!-- <About /> -->
   </div>
 </template>
 
 <script>
 import BodyNav from "../components/sample2/BodyNav.vue";
-import About from "../components/sample2/About.vue";
+
 export default {
   name: "Component2",
   components: {
     BodyNav,
-    About,
   },
+  mounted() {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0,
+    };
+
+    const flexItems = document.querySelectorAll(".flex-item");
+    flexItems.forEach((target) => this.onIntersect(target, options));
+  },
+  methods: {
+    onIntersect(target, options = {}) {
+      const observer = new IntersectionObserver(this.addClass, options);
+      observer.observe(target);
+    },
+    addClass(entries) {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("inview");
+        }
+      }
+    },
+
+  }
 };
 </script>
 
@@ -79,6 +103,22 @@ export default {
     }
     30% {
       transform: translateY(10px);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .component2 {
+    margin-top: 0;
+    & .container {
+      & .transition {
+        bottom: 30%;
+        right: 47%;
+      }
+        & .fa-long-arrow-alt-down {
+          bottom: 28%;
+          right: 48%;
+        }
     }
   }
 }

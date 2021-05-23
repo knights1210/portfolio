@@ -1,6 +1,6 @@
 <template>
   <div class="top">
-    <h2>学んできたもの</h2>
+    <h2>学んだスキル</h2>
     <div class="items">
       <template v-for="(learn, i) in learns">
         <v-hover :key="i">
@@ -9,7 +9,7 @@
               <div class="learn">
                 <img :src="learn.src" :alt="learn.name" />
                 <p>{{ learn.name }}</p>
-                <p>{{ learn.coments }}</p>
+                <p>{{ learn.comments }}</p>
               </div>
             </v-card>
           </template>
@@ -25,35 +25,35 @@ export default {
   data() {
     return {
       learns: [
-        { name: "Vue", src: "Vue.png", coments: "Udemyから学習しました" },
+        { name: "Vue", src: "Vue.png", comments: "Udemyから学習しました。ProtfolioもVueで作成しています。" },
         {
           name: "CSS 3",
           src: "CSS3.png",
-          coments:
-            "本・Youtube・Udemy ドットインストール・Progate CODEPREPから学習しました",
+          comments:
+            "書籍・Youtube・Udemy ドットインストール・Progate CODEPREPから学習しました",
         },
         {
           name: "HTML 5",
           src: "HTML5.png",
-          coments:
-            "本・Youtube・Udemyドットインストール・Progate CODEPREPから学習しました",
+          comments:
+            "書籍・Youtube・Udemyドットインストール・Progate CODEPREPから学習しました",
         },
         {
           name: "Javascript",
           src: "Javascript.png",
-          coments:
+          comments:
             "Youtube・Udemy ドットインストール・Progate CODEPREPから学習しました",
         },
         {
           name: "PHP",
           src: "PHP.png",
-          coments:
-            "本・Udemy ドットインストール・Progate CODEPREPから学習しました",
+          comments:
+            "書籍・Udemy ドットインストール・Progate CODEPREPから学習しました。DBを使ったかんたんなアプリも作成しました。",
         },
         {
           name: "React",
           src: "React.png",
-          coments: "Udemy Progate CODEPREPから学習しました",
+          comments: "Udemy Progate CODEPREPから学習しました",
         },
       ],
     };

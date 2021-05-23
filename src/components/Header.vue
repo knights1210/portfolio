@@ -16,7 +16,7 @@
       </li>
       <li>
         <v-btn
-          to="/component2"
+          to="/component2/top"
           active-class="btn"
           color="blue-grey darken-4"
           elevation="2"
