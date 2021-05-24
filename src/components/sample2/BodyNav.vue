@@ -76,10 +76,7 @@ export default {
     .body-nav {
       flex-direction: column;
         padding: 0;
-      // display: hidden;
-      // position: absolute;
       .nav-link {
-        // width: 600px;
         & li {
           border-top: 1px solid black;
           width: 100%;

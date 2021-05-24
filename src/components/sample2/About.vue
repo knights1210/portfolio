@@ -99,10 +99,9 @@ export default {
       display: flex;
       margin: 20px;
       border: 1px solid black;
-      opacity: 0;
       overflow: hidden;
       &.inview {
-        animation-name: show;
+        animation-name: flex-show;
         animation-duration: 1.6s;
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards;
@@ -113,7 +112,7 @@ export default {
         &::after {
           position: absolute;
           content: "";
-          z-index: 2;
+          // z-index: 2;
           background-color: black;
           top: 0;
           left: 0;
@@ -137,10 +136,10 @@ export default {
         flex-direction: row-reverse;
       }
       & .flex-img {
-        // opacity: 1;
         width: 50%;
       }
       &.inview .flex-img {
+        opacity: 1;
         animation-name: img-show;
         animation-duration: 1.6s;
         animation-timing-function: ease-in-out;
@@ -196,12 +195,12 @@ export default {
     opacity: 1;
   }
 }
-@keyframes show {
+@keyframes flex-show {
   0% {
     opacity: 0;
   }
   50% {
-    opacity: 0;
+    opacity: 1;
   }
   50.1% {
     opacity: 1;

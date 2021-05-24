@@ -7,7 +7,7 @@
       </div>
       <div class="top-content container">
         <h2>PortFolio SAMPLE 2</h2>
-        <p>都会の喧騒から離れて、当旅館で癒やしてみませんか？</p>
+        <p>都会の喧騒から離れて、当旅館で癒やされませんか？</p>
       </div>
     </div>
     <Body-nav />
