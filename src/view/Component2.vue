@@ -6,13 +6,14 @@
         <font-awesome-icon class="fa-long-arrow-alt-down" icon="arrow-down" />
       </div>
       <div class="top-content container">
-        <h2>PortFolio SAMPLE 2</h2>
+        <h1>PortFolio SAMPLE 2</h1>
         <p>都会の喧騒から離れて、当旅館で癒やされませんか？</p>
       </div>
     </div>
     <Body-nav />
-    <router-view></router-view>
-    <!-- <About /> -->
+    <transition name="fade" mode="out-in">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -24,30 +25,6 @@ export default {
   components: {
     BodyNav,
   },
-  mounted() {
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0,
-    };
-
-    const flexItems = document.querySelectorAll(".flex-item");
-    flexItems.forEach((target) => this.onIntersect(target, options));
-  },
-  methods: {
-    onIntersect(target, options = {}) {
-      const observer = new IntersectionObserver(this.addClass, options);
-      observer.observe(target);
-    },
-    addClass(entries) {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("inview");
-        }
-      }
-    },
-
-  }
 };
 </script>
 
@@ -65,15 +42,17 @@ export default {
     margin: 0 auto;
     & .transition {
       position: absolute;
-      bottom: 10%;
-      right: 50%;
+      bottom: 12%;
+      left: 50%;
+      transform: rotate(90deg);
       font-weight: bold;
       font-family: "Kameron", serif;
     }
     & .fa-long-arrow-alt-down {
       position: absolute;
-      bottom: 8%;
-      right: 51%;
+      bottom: 13%;
+      left: 48%;
+      transform: translateX(-48%);
       font-weight: bold;
       color: black;
       font-size: 30px;
@@ -87,23 +66,41 @@ export default {
     margin-top: 20%;
     width: auto;
     text-align: center;
-    & h2 {
+    & h1 {
       font-size: 3rem;
       font-family: "Kameron", serif;
+      text-shadow: 1px 1px 0 white;
     }
     & p {
+      display: inline-block;
+      text-shadow: 1px 1px 0 white;
       font-size: 1.125rem;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 5px;
     }
   }
-  @keyframes bounce {
-    0%,
-    40%,
-    100% {
-      transform: translateY(0px);
-    }
-    30% {
-      transform: translateY(10px);
-    }
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter-to {
+  opacity: 1;
+}
+
+@keyframes bounce {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0px);
+  }
+  30% {
+    transform: translateY(10px);
   }
 }
 
@@ -112,13 +109,15 @@ export default {
     margin-top: 0;
     & .container {
       & .transition {
-        bottom: 30%;
-        right: 47%;
+        bottom: 35%;
+        left: 46%;
+        margin: 0;
       }
-        & .fa-long-arrow-alt-down {
-          bottom: 28%;
-          right: 48%;
-        }
+      & .fa-long-arrow-alt-down {
+        bottom: 30%;
+        // left: 50%;
+        // transform: translateX(-50%);
+      }
     }
   }
 }

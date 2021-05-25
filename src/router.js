@@ -3,8 +3,8 @@ import Router from "vue-router";
 import Component1 from "./view/Component1.vue";
 import Component2 from "./view/Component2.vue";
 import Component3 from "./view/Component3.vue";
-// import BodyNav from "./components/sample2/BodyNav.vue";
 import About from "./components/sample2/About.vue";
+import Room from "./components/sample2/Room.vue";
 import TopPage from "./view/Top.vue";
 
 export default new Router({
@@ -17,17 +17,24 @@ export default new Router({
       component: Component2,
       children: [
         {
-          path: "top",
+          path: "/component2/",
           name: "about",
           component: About,
         },
+        {
+          path: 'room',
+          name: 'room',
+          component: Room,
+        }
       ],
     },
     { path: "/component3", component: Component3 },
   ],
-  scrollBehavior() {
-    return { x: 0, y: 0 };
-  },
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } 
+  }
 });
 
 Vue.use(Router);

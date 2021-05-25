@@ -147,7 +147,6 @@ export default {
   font-family: "Itim", cursive;
   text-shadow: 1px 1px 0 white;
   transform: translateX(500px);
-  opacity: 0;
 }
 .container {
   max-width: 1100px;

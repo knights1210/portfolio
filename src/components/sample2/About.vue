@@ -68,6 +68,31 @@ export default {
   data() {
     return {};
   },
+  mounted() {
+    console.log("mounted");
+    const options = {
+      root: null,
+      rootMargin: "-100px",
+      threshold: 0,
+    };
+
+    const flexItems = document.querySelectorAll(".flex-item");
+    flexItems.forEach((target) => this.onIntersect(target, options));
+    console.log("mounted", flexItems);
+  },
+  methods: {
+    onIntersect(target, options = {}) {
+      const observer = new IntersectionObserver(this.addClass, options);
+      observer.observe(target);
+    },
+    addClass(entries) {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("inview");
+        }
+      }
+    },
+  },
 };
 </script>
 
@@ -100,6 +125,7 @@ export default {
       margin: 20px;
       border: 1px solid black;
       overflow: hidden;
+      opacity: 0;
       &.inview {
         animation-name: flex-show;
         animation-duration: 1.6s;
@@ -134,6 +160,16 @@ export default {
 
       &:nth-child(2n) {
         flex-direction: row-reverse;
+        &.inview {
+          &::after {
+            opacity: 1;
+            animation-name: slide;
+            animation-duration: 1.6s;
+            animation-timing-function: ease-in-out;
+            animation-direction: reverse;
+            animation-fill-mode: forwards;
+          }
+        }
       }
       & .flex-img {
         width: 50%;

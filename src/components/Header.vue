@@ -16,12 +16,11 @@
       </li>
       <li>
         <v-btn
-          to="/component2/top"
+          to="/component2/"
           active-class="btn"
           color="blue-grey darken-4"
           elevation="2"
           outlined
-          exact
           >SAMPLE2</v-btn
         >
       </li>
