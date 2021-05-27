@@ -115,6 +115,7 @@ export default {
       text-align: center;
       background-color: black;
       color: white;
+      font-weight: normal;
     }
     & .about-p {
       text-align: center;

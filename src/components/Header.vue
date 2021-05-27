@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <router-link to="/" exact><h1>My Port Folio</h1></router-link>
-    <p>未経験エンジニア</p>
+    <p>駆け出しエンジニア</p>
     <ul class="menu">
       <li>
         <v-btn

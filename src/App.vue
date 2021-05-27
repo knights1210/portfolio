@@ -28,7 +28,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap");
 * {
   box-sizing: border-box;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family:  "meiryo", "hiragino kaku Gothic ProN",sans-serif;
 }
 
 .fade-enter,

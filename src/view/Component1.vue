@@ -232,7 +232,6 @@ export default {
           margin: 10px auto;
           overflow: hidden;
           & img {
-            // width: 100%;
             height: 100%;
             transition: all 0.5s 0s ease;
             &:hover {
@@ -256,32 +255,6 @@ export default {
     font-weight: bold;
     overflow: hidden;
   }
-  // .wrapper {
-  //     // overflow: hidden;
-  //   & .box {
-  //     display: inline-block;
-  //     width: 10px;
-  //     height: 10px;
-  //     background-color: black;
-  //     animation: jump-box 1s;
-  //     animation-iteration-count: infinite;
-  //   }
-  // }
-  // @keyframes jump-box {
-  //   0%,
-  //   40%,
-  //   60%,
-  //   100% {
-  //     height: 10px;
-  //     transform: translateY(0);
-  //   }
-  //   20% {
-  //     transform: translateY(-20px);
-  //   }
-  //   50% {
-  //     height: 6px;
-  //   }
-  // }
 
   .hooper-slide {
     background-color: #62caaa;

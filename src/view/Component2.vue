@@ -77,6 +77,7 @@ export default {
       font-size: 1.125rem;
       background-color: rgba(255, 255, 255, 0.5);
       border-radius: 5px;
+      padding: 5px;
     }
   }
 }
