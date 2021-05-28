@@ -104,6 +104,9 @@ export default {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0;
+  background-color: black;
+  color: white;
+  text-shadow: #FC0 1px 0 10px;
   & .container-h2 {
     text-align: center;
   }
@@ -189,6 +192,7 @@ export default {
           background-color: black;
           color: white;
           font-weight: normal;
+          border-bottom: 1px solid white;
         }
         & .flex-p {
           padding: 20px;
@@ -237,7 +241,7 @@ export default {
     opacity: 0;
   }
   50% {
-    opacity: 1;
+    opacity: 0;
   }
   50.1% {
     opacity: 1;

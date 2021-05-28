@@ -30,11 +30,11 @@ export default new Router({
     },
     { path: "/component3", component: Component3 },
   ],
-  scrollBehavior (to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition
-    } 
-  }
+  // scrollBehavior (to, from, savedPosition) {
+  //   if (savedPosition) {
+  //     return savedPosition
+  //   } 
+  // }
 });
 
 Vue.use(Router);

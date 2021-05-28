@@ -23,14 +23,15 @@ export default {
 
 <style lang="scss" scoped>
 .link-active {
-  background-color: black;
-  color: white !important;
+  background-color: white;
+  color: black !important;
+  text-shadow: gray 2px 2px 3px;
 }
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0;
-  margin-bottom: 10px;
+  background-color: black;
   & .body-nav {
     justify-content: center;
     display: flex;
@@ -42,7 +43,7 @@ export default {
       padding: 5px;
       list-style: none;
       border-right: 1px solid black;
-      color: black;
+      color: white;
       position: relative;
       z-index: 1;
       overflow: hidden;
@@ -51,7 +52,7 @@ export default {
         content: "";
         width: 100%;
         height: 100%;
-        background-color: black;
+        background-color: white;
         position: absolute;
         top: 0;
         left: 0;
@@ -62,7 +63,8 @@ export default {
         z-index: -1;
       }
       &:hover {
-        color: white;
+        color: black;
+        text-shadow: gray 2px 2px 3px;
         &::before {
           transform: none;
           opacity: 1;
