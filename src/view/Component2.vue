@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-black">
     <div class="component2">
       <div class="container">
         <p class="transition">Scroll</p>
@@ -30,7 +30,9 @@ export default {
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Kameron&display=swap");
-
+.bg-black {
+  background-color: black;
+}
 .component2 {
   margin-top: 58px;
   background-image: url("/onsentop.jpg");

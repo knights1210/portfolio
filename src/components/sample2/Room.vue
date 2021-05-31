@@ -3,53 +3,66 @@
     <h2 class="container-h2">お部屋のご案内</h2>
     <h3 class="container-h3">当旅館のお部屋</h3>
     <p class="container-p">当旅館のお部屋の一部をご紹介</p>
-    <p class="container-p"><small>※当館は全室、空調設備完備・光触媒コーティングによる抗菌にて
-    感染症対策を行っております。</small></p>
+    <p class="container-p">
+      <small
+        >※当館は全室、空調設備完備・光触媒コーティングによる抗菌にて
+        感染症対策を行っております。</small
+      >
+    </p>
 
-    <div class="room-item">
-      <h3 class="room-title">和室の間</h3>
-      <div class="room-imgs">
-        <img
-          class="room-img"
-          src="@/assets/img/sample2/room/room-wa1.jpg"
-          alt="和室１"
-        />
-        <img
-          class="room-img"
-          src="@/assets/img/sample2/room/room-wa2.jpg"
-          alt="和室２"
-        />
-        <img
-          class="room-img"
-          src="@/assets/img/sample2/room/room-wa3.jpg"
-          alt="和室３"
-        />
+    <div class="room-item wa">
+      <div class="bgimg-opc">
+        <h3 class="room-title">和室の間</h3>
+        <div class="room-imgs">
+          <img
+            class="room-img"
+            src="@/assets/img/sample2/room/room-wa1.jpg"
+            alt="和室１"
+          />
+          <img
+            class="room-img"
+            src="@/assets/img/sample2/room/room-wa2.jpg"
+            alt="和室２"
+          />
+          <img
+            class="room-img"
+            src="@/assets/img/sample2/room/room-wa3.jpg"
+            alt="和室３"
+          />
+        </div>
+        <p class="room-item-p">
+          和室の間では、実家のようにくつろげる空間をご提供。<br />
+          和室の良さを現代の技術を組合わせて快適に過ごしていただけるお部屋になっております。<br />
+          冬には嬉しいコタツも利用可能です。
+        </p>
+        <p class="room-item-p">
+          定員<br />
+          ２～４名様
+        </p>
+        <p class="room-item-p">
+          設備等<br />
+          テレビ／冷蔵庫／冷暖房／床暖房／空気清浄機／お風呂／洗面台／トイレ
+        </p>
       </div>
-      <p class="room-item-p">和室の間では、実家のようにくつろげる空間をご提供。<br>
-      和室の良さを現代の技術を組合わせて快適に過ごしていただけるお部屋になっております。
-      </p>
-      <p class="room-item-p">定員<br>
-      ２～４名様</p>
-      <p class="room-item-p">設備等<br>
-      テレビ／冷蔵庫／冷暖房／床暖房／空気清浄機／お風呂／洗面台／トイレ</p>
     </div>
 
-
-    <div class="room-item">
-      <h3 class="room-title">洋室の間</h3>
-      <div class="room-imgs-y">
-        <img
-          class="room-img-y"
-          src="@/assets/img/sample2/room/room-y1.jpg"
-          alt="洋室１"
-        />
-        <img
-          class="room-img-y"
-          src="@/assets/img/sample2/room/room-y2.jpg"
-          alt="洋室２"
-        />
+    <div class="room-item yo">
+      <div class="bgimg-opc">
+        <h3 class="room-title">洋室の間</h3>
+        <div class="room-imgs-y">
+          <img
+            class="room-img-y"
+            src="@/assets/img/sample2/room/room-y1.jpg"
+            alt="洋室１"
+          />
+          <img
+            class="room-img-y"
+            src="@/assets/img/sample2/room/room-y2.jpg"
+            alt="洋室２"
+          />
+        </div>
+        <p class="room-item-p">洋室の間</p>
       </div>
-      <p class="room-item-p">洋室の間</p>
     </div>
   </div>
 </template>
@@ -60,29 +73,49 @@ export default {};
 
 <style lang="scss" scoped>
 .container {
+  color: white;
+  text-shadow: #fc0 1px 0 5px;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0;
   & .container-h2 {
+    margin-top: 10px;
     text-align: center;
+    text-decoration: underline;
   }
   & .container-h3 {
     text-align: center;
-    background-color: black;
-    color: white;
     font-weight: normal;
     margin-bottom: 10px;
   }
   & .container-p {
     text-align: center;
+    & small {
+      text-shadow: black 1px 0 5px;
+      color: lightgray;
+      text-decoration: underline red 2px;
+    }
   }
   & .room-item {
     margin: 20px;
-    border: 1px solid black;
+    // border-bottom: 1px solid white;
+    &.wa {
+      background: url("/room-wa2.jpg") center center / cover no-repeat;
+      & .bgimg-opc {
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+    }
+    &.yo {
+      background: url("/room-y1.jpg") center center / cover no-repeat;
+      & .bgimg-opc {
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+    }
     & .room-title {
+      padding-top: 10px;
+      text-decoration: underline 2px;
       text-align: center;
-      background-color: black;
-      color: white;
       font-weight: normal;
     }
     & .room-imgs {
@@ -102,7 +135,9 @@ export default {};
       }
     }
     & .room-item-p {
-      margin: 20px;
+      padding: 10px;
+      font-size: 14px;
+      margin: 0;
     }
   }
 }
