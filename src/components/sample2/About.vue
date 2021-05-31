@@ -285,15 +285,13 @@ export default {
 
 @media (max-width: 600px) {
   .container {
-    & .about-us {
-      & .flex-item {
+    & .flex-item {
+      flex-direction: column;
+      .flex-img {
+        width: 100%;
+      }
+      &:nth-child(2n) {
         flex-direction: column;
-        .flex-img {
-          width: 100%;
-        }
-        &:nth-child(2n) {
-          flex-direction: column;
-        }
       }
     }
   }
