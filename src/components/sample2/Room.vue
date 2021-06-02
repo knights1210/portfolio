@@ -61,7 +61,11 @@
             alt="洋室２"
           />
         </div>
-        <p class="room-item-p">洋室の間</p>
+        <p class="room-item-p">洋室の間では、雰囲気がガラリと変わってホテルのようなお部屋になっております。<br>
+        ツインベッドルーム・ダブルベッドルームをご用意しております。<br>こちらのお部屋も外の景色は大自然満載です。</p>
+        <p class="room-item-p">定員<br>2名様を想定</p>
+        <p class="room-item-p">設備等<br>
+        テレビ／冷蔵庫／冷暖房／床暖房／空気清浄機／お風呂／洗面台／トイレ</p>
       </div>
     </div>
   </div>
@@ -138,6 +142,19 @@ export default {};
       padding: 10px;
       font-size: 14px;
       margin: 0;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    .room-item {
+      .room-imgs, .room-imgs-y{
+        flex-direction: column;
+        & .room-img, .room-img-y {
+          width: 100%;
+        }
+      }
     }
   }
 }

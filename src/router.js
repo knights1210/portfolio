@@ -11,13 +11,14 @@ export default new Router({
   mode: "history",
   routes: [
     { path: "/", component: TopPage },
-    { path: "/component1", component: Component1 },
+    { path: "/component1", component: Component1, meta: {title: 'sample1'}},
     {
       path: "/component2",
       component: Component2,
+      meta: {title: 'sample2'},
       children: [
         {
-          path: "/component2/",
+          path: "/component2",
           name: "about",
           component: About,
         },
@@ -30,11 +31,12 @@ export default new Router({
     },
     { path: "/component3", component: Component3 },
   ],
-  // scrollBehavior (to, from, savedPosition) {
-  //   if (savedPosition) {
-  //     return savedPosition
-  //   } 
-  // }
+  scrollBehavior (to) {
+    if (to.meta.title) {
+      console.log(to.meta.title);
+      return { x: 0, y: 0 }
+    } 
+  }
 });
 
 Vue.use(Router);

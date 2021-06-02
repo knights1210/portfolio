@@ -75,11 +75,15 @@ export default {
     }
     & p {
       display: inline-block;
-      text-shadow: 1px 1px 0 white;
+      // color: rgb(95, 95, 95);
+      text-shadow: 3px 3px 1px lightgray;
       font-size: 1.125rem;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgba(255, 255, 255, 0.15);
       border-radius: 5px;
       padding: 5px;
+      backdrop-filter: blur( 2.5px );
+      // box-shadow: gray 4px 4px 2px;
+      border: 1px solid rgba( 255, 255, 255, 0.18 );
     }
   }
 }
@@ -121,6 +125,15 @@ export default {
         // left: 50%;
         // transform: translateX(-50%);
       }
+    }
+    & .top-content {
+      & h1 {
+        font-size: 2rem;
+      }
+        & p {
+          font-size: 0.9rem;
+
+        }
     }
   }
 }
