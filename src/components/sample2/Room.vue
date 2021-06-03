@@ -15,21 +15,29 @@
         <h3 class="room-title">和室の間</h3>
         <div class="room-imgs">
           <img
+            @click="showLightbox(0)"
             class="room-img"
             src="@/assets/img/sample2/room/room-wa1.jpg"
             alt="和室１"
           />
           <img
+            @click="showLightbox(1)"
             class="room-img"
             src="@/assets/img/sample2/room/room-wa2.jpg"
             alt="和室２"
           />
           <img
+            @click="showLightbox(2)"
             class="room-img"
             src="@/assets/img/sample2/room/room-wa3.jpg"
             alt="和室３"
           />
         </div>
+          <LightBox
+            ref="lightbox"
+            :media="images"
+            :showLightBox="false"
+          ></LightBox>
         <p class="room-item-p">
           和室の間では、実家のようにくつろげる空間をご提供。<br />
           和室の良さを現代の技術を組合わせて快適に過ごしていただけるお部屋になっております。<br />
@@ -51,28 +59,75 @@
         <h3 class="room-title">洋室の間</h3>
         <div class="room-imgs-y">
           <img
+            @click="showLightbox(3)"
             class="room-img-y"
             src="@/assets/img/sample2/room/room-y1.jpg"
             alt="洋室１"
           />
           <img
+            @click="showLightbox(4)"
             class="room-img-y"
             src="@/assets/img/sample2/room/room-y2.jpg"
             alt="洋室２"
           />
         </div>
-        <p class="room-item-p">洋室の間では、雰囲気がガラリと変わってホテルのようなお部屋になっております。<br>
-        ツインベッドルーム・ダブルベッドルームをご用意しております。<br>こちらのお部屋も外の景色は大自然満載です。</p>
-        <p class="room-item-p">定員<br>2名様を想定</p>
-        <p class="room-item-p">設備等<br>
-        テレビ／冷蔵庫／冷暖房／床暖房／空気清浄機／お風呂／洗面台／トイレ</p>
+        <p class="room-item-p">
+          洋室の間では、雰囲気がガラリと変わってホテルのようなお部屋になっております。<br />
+          ツインベッドルーム・ダブルベッドルームをご用意しております。<br />こちらのお部屋も外の景色は大自然満載です。
+        </p>
+        <p class="room-item-p">定員<br />2名様を想定</p>
+        <p class="room-item-p">
+          設備等<br />
+          テレビ／冷蔵庫／冷暖房／床暖房／空気清浄機／お風呂／洗面台／トイレ
+        </p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import LightBox from "vue-image-lightbox";
+require("vue-image-lightbox/dist/vue-image-lightbox.min.css");
+export default {
+  components: {
+    LightBox,
+  },
+  data() {
+    return {
+      images: [
+        {
+          thumb: require("@/assets/img/sample2/room/room-wa1.jpg"),
+          src: require("@/assets/img/sample2/room/room-wa1.jpg"),
+          caption: 'caption1'
+        },
+        {
+          thumb: require("@/assets/img/sample2/room/room-wa2.jpg"),
+          src: require("@/assets/img/sample2/room/room-wa2.jpg"),
+        },
+        {
+          thumb: require("@/assets/img/sample2/room/room-wa3.jpg"),
+          src: require("@/assets/img/sample2/room/room-wa3.jpg"),
+        },
+        {
+          thumb: require("@/assets/img/sample2/room/room-y1.jpg"),
+          src: require("@/assets/img/sample2/room/room-y1.jpg"),
+        },
+        {
+          thumb: require("@/assets/img/sample2/room/room-y2.jpg"),
+          src: require("@/assets/img/sample2/room/room-y2.jpg"),
+          
+        },
+      ],
+      imagesY: [
+      ],
+    };
+  },
+  methods: {
+    showLightbox(index) {
+      this.$refs.lightbox.showImage(index);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -149,9 +204,12 @@ export default {};
 @media (max-width: 600px) {
   .container {
     .room-item {
-      .room-imgs, .room-imgs-y{
+      .room-imgs,
+      .room-imgs-y {
         flex-direction: column;
-        & .room-img, .room-img-y {
+        margin: 0;
+        & .room-img,
+        .room-img-y {
           width: 100%;
         }
       }

@@ -14,6 +14,7 @@
 import "normalize.css";
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
+require("vue-image-lightbox/dist/vue-image-lightbox.min.css");
 
 export default {
   name: "App",
@@ -26,6 +27,7 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap");
+@import '/node_modules/vue-image-lightbox/dist/vue-image-lightbox.min.css';
 * {
   box-sizing: border-box;
   font-family:  "meiryo", "hiragino kaku Gothic ProN",sans-serif;
