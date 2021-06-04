@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <h2 class="container-h2">お部屋のご案内</h2>
-    <h3 class="container-h3">当旅館のお部屋</h3>
-    <p class="container-p">当旅館のお部屋の一部をご紹介</p>
-    <p class="container-p">
+    <h2 class="room-h2">Room</h2>
+    <h3 class="room-h3">当旅館のお部屋</h3>
+    <p class="room-p">当旅館のお部屋の一部をご紹介</p>
+    <p class="room-p">
       <small
         >※当館は全室、空調設備完備・光触媒コーティングによる抗菌にて
         感染症対策を行っております。</small
@@ -136,17 +136,15 @@ export default {
   text-shadow: #fc0 1px 0 5px;
   max-width: 1100px;
   margin: 0 auto;
-  & .container-h2 {
-    margin-top: 10px;
+  & .room-h2 {
     text-align: center;
     text-decoration: underline;
   }
-  & .container-h3 {
+  & .room-h3 {
     text-align: center;
-    font-weight: normal;
     margin-bottom: 10px;
   }
-  & .container-p {
+  & .room-p {
     text-align: center;
     & small {
       text-shadow: black 1px 0 5px;
@@ -156,12 +154,13 @@ export default {
   }
   & .room-item {
     margin: 20px;
-    // border-bottom: 1px solid white;
     &.wa {
       background: url("/room-wa2.jpg") center center / cover no-repeat;
       & .bgimg-opc {
         height: 100%;
         background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(2.5px);
+        
       }
     }
     &.yo {
@@ -169,6 +168,7 @@ export default {
       & .bgimg-opc {
         height: 100%;
         background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(2.5px);
       }
     }
     & .room-title {

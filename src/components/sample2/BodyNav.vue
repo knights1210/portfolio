@@ -1,15 +1,33 @@
 <template>
   <div class="container">
     <div class="body-nav">
-      <router-link class="nav-link" active-class="link-active" exact :to="{ name: 'about' }"
-        >ABOUT US</router-link
+      <router-link
+        class="nav-link"
+        active-class="link-active"
+        exact
+        :to="{ name: 'about' }"
+        >About Us</router-link
       >
-      <router-link class="nav-link" active-class="link-active" exact :to="{ name: 'room' }"
-        >お部屋のご案内</router-link
+      <router-link
+        class="nav-link"
+        active-class="link-active"
+        exact
+        :to="{ name: 'room' }"
+        >Room</router-link
       >
-      <router-link class="nav-link" active-class="link-active" exact to="/">温泉</router-link>
-      <router-link class="nav-link" active-class="link-active" exact to="/">お食事</router-link>
-      <router-link class="nav-link" active-class="link-active" exact to="/">プラン</router-link>
+      <router-link
+        class="nav-link"
+        active-class="link-active"
+        exact
+        :to="{ name: 'onsen' }"
+        >Onsen</router-link
+      >
+      <router-link class="nav-link" active-class="link-active" exact to="/"
+        >お食事</router-link
+      >
+      <router-link class="nav-link" active-class="link-active" exact to="/"
+        >プラン</router-link
+      >
     </div>
     <hr />
   </div>
@@ -80,10 +98,8 @@ export default {
       flex-direction: column;
       padding: 0;
       .nav-link {
-        
-          border-top: 1px solid black;
-          width: 100%;
-        
+        border-top: 1px solid black;
+        width: 100%;
       }
     }
   }

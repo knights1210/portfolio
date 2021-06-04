@@ -5,6 +5,7 @@ import Component2 from "./view/Component2.vue";
 import Component3 from "./view/Component3.vue";
 import About from "./components/sample2/About.vue";
 import Room from "./components/sample2/Room.vue";
+import Onsen from "./components/sample2/Onsen.vue";
 import TopPage from "./view/Top.vue";
 
 export default new Router({
@@ -15,9 +16,9 @@ export default new Router({
     {
       path: "/component2",
       component: Component2,
-      meta: {title: 'sample2'},
       children: [
         {
+          meta: {title: 'sample2'},
           path: "/component2",
           name: "about",
           component: About,
@@ -26,6 +27,11 @@ export default new Router({
           path: 'room',
           name: 'room',
           component: Room,
+        },
+        {
+          path: 'onsen',
+          name: 'onsen',
+          component: Onsen,
         }
       ],
     },

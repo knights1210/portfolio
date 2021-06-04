@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2 class="container-h2">ABOUT US</h2>
+    <h2 class="about-h2">ABOUT US</h2>
 
     <h3 class="about-h3">当館について</h3>
     <p class="about-p">
@@ -110,7 +110,7 @@ export default {
   margin: 0 auto;
   color: white;
   text-shadow: #fc0 1px 0 5px;
-  & .container-h2 {
+  & .about-h2 {
     text-align: center;
     text-decoration: underline white;
   }
@@ -120,11 +120,11 @@ export default {
 
   & .about-h3 {
     text-align: center;
-    font-weight: normal;
+    margin-bottom: 10px;
   }
   & .about-p {
     text-align: center;
-    padding: 10px;
+    // padding: 10px;
     & small {
       text-shadow: black 1px 0 5px;
       color: lightgray;
@@ -228,6 +228,7 @@ export default {
         border-bottom: 1px solid white;
       }
       & .flex-p {
+        font-size: 0.9rem;
         padding: 20px;
       }
     }
