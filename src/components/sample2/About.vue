@@ -74,19 +74,17 @@ export default {
     return {};
   },
   mounted() {
-    console.log("mounted");
     const options = {
       root: null,
       rootMargin: "-100px",
       threshold: 0,
     };
 
-    const flexItems = document.querySelectorAll(".flex-item");
+    const flexItems = document.querySelectorAll(".flex-item, small");
     flexItems.forEach((target) => this.onIntersect(target, options));
-    console.log("mounted", flexItems);
   },
   methods: {
-    onIntersect(target, options = {}) {
+    onIntersect(target, options) {
       const observer = new IntersectionObserver(this.addClass, options);
       observer.observe(target);
     },
@@ -103,7 +101,7 @@ export default {
 
 <style lang="scss" scoped>
 .marker {
-  background: linear-gradient(transparent 70%, #ee9e9e 90%);
+  background: linear-gradient(transparent 70%, red 90%);
 }
 .container {
   max-width: 1100px;
@@ -126,9 +124,17 @@ export default {
     text-align: center;
     // padding: 10px;
     & small {
+      background: linear-gradient(transparent 90%, #ff0000 10%);
+      background-size: 0;
+      background-repeat: no-repeat;
+      background-position: bottom left;
+      transition: all 1.5s ease;
       text-shadow: black 1px 0 5px;
       color: lightgray;
-      text-decoration: underline red 2px;
+      &.inview {
+        background-size: 100%;
+
+      }
     }
   }
   & .flex-item {

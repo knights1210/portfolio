@@ -33,11 +33,12 @@
             alt="和室３"
           />
         </div>
-          <LightBox
-            ref="lightbox"
-            :media="images"
-            :showLightBox="false"
-          ></LightBox>
+        <LightBox
+          ref="lightbox"
+          :media="images"
+          :showLightBox="false"
+          :showThumbs="false"
+        ></LightBox>
         <p class="room-item-p">
           和室の間では、実家のようにくつろげる空間をご提供。<br />
           和室の良さを現代の技術を組合わせて快適に過ごしていただけるお部屋になっております。<br />
@@ -98,7 +99,7 @@ export default {
         {
           thumb: require("@/assets/img/sample2/room/room-wa1.jpg"),
           src: require("@/assets/img/sample2/room/room-wa1.jpg"),
-          caption: 'caption1'
+          caption: "caption1",
         },
         {
           thumb: require("@/assets/img/sample2/room/room-wa2.jpg"),
@@ -115,12 +116,26 @@ export default {
         {
           thumb: require("@/assets/img/sample2/room/room-y2.jpg"),
           src: require("@/assets/img/sample2/room/room-y2.jpg"),
-          
         },
       ],
-      imagesY: [
-      ],
     };
+  },
+  mounted() {
+    const els = document.querySelector("small");
+    const cb = function(entries) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("inview");
+        }
+      });
+    };
+    const options = {
+      root: null,
+      rootMargin: "-100px",
+      threshold: 0,
+    };
+    const io = new IntersectionObserver(cb, options);
+    io.observe(els);
   },
   methods: {
     showLightbox(index) {
@@ -147,9 +162,16 @@ export default {
   & .room-p {
     text-align: center;
     & small {
+      background: linear-gradient(transparent 90%, #ff0000 10%);
+      background-repeat: no-repeat;
+      background-position: bottom left;
+      background-size: 0%;
       text-shadow: black 1px 0 5px;
       color: lightgray;
-      text-decoration: underline red 2px;
+      transition: all 1.7s ease;
+      &.inview {
+        background-size: 100%;
+      }
     }
   }
   & .room-item {
@@ -160,7 +182,6 @@ export default {
         height: 100%;
         background-color: rgba(0, 0, 0, 0.6);
         backdrop-filter: blur(2.5px);
-        
       }
     }
     &.yo {

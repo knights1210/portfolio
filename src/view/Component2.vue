@@ -80,8 +80,8 @@ export default {
       background-color: rgba(255, 255, 255, 0.15);
       border-radius: 5px;
       padding: 5px;
-      backdrop-filter: blur( 2.5px );
-      border: 1px solid rgba( 255, 255, 255, 0.18 );
+      backdrop-filter: blur(2.5px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
     }
   }
 }
@@ -128,10 +128,9 @@ export default {
       & h1 {
         font-size: 2rem;
       }
-        & p {
-          font-size: 0.9rem;
-
-        }
+      & p {
+        font-size: 0.9rem;
+      }
     }
   }
 }

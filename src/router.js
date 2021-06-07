@@ -7,6 +7,7 @@ import About from "./components/sample2/About.vue";
 import Room from "./components/sample2/Room.vue";
 import Onsen from "./components/sample2/Onsen.vue";
 import TopPage from "./view/Top.vue";
+import NotFound from "./components/NotFound.vue"
 
 export default new Router({
   mode: "history",
@@ -15,10 +16,11 @@ export default new Router({
     { path: "/component1", component: Component1, meta: {title: 'sample1'}},
     {
       path: "/component2",
+      name: "sample2",
       component: Component2,
       children: [
         {
-          meta: {title: 'sample2'},
+          // meta: {title: 'sample2'},
           path: "/component2",
           name: "about",
           component: About,
@@ -36,11 +38,11 @@ export default new Router({
       ],
     },
     { path: "/component3", component: Component3 },
+    { path: '/*', component: NotFound, redirect: { path: '/'} }
   ],
-  scrollBehavior (to) {
-    if (to.meta.title) {
-      console.log(to.meta.title);
-      return { x: 0, y: 0 }
+  scrollBehavior (savedPosition) {
+    if (savedPosition) {
+      return savedPosition
     } 
   }
 });
