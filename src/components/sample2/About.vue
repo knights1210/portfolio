@@ -80,7 +80,7 @@ export default {
       threshold: 0,
     };
 
-    const flexItems = document.querySelectorAll(".flex-item, small");
+    const flexItems = document.querySelectorAll(".flex-item, small, .marker");
     flexItems.forEach((target) => this.onIntersect(target, options));
   },
   methods: {
@@ -101,7 +101,15 @@ export default {
 
 <style lang="scss" scoped>
 .marker {
-  background: linear-gradient(transparent 70%, red 90%);
+  background: linear-gradient(transparent 90%, rgb(255, 130, 130) 10%);
+   background-repeat: no-repeat;
+  background-size: 0%;
+  background-position: bottom left;
+  transition: all 1.7s ease;
+  transition-delay: 1.1s;
+  &.inview {
+    background-size: 100%;
+  }
 }
 .container {
   max-width: 1100px;
