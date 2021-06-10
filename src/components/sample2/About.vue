@@ -201,22 +201,6 @@ export default {
           left: 0;
           animation: bounce2 1s ease infinite;
         }
-        @keyframes bounce {
-          0%, 100% {
-            transform: translateX(0) rotate(-40deg);
-          }
-          10% {
-            transform: translateX(-10px) rotate(-40deg);
-          }
-        }
-        @keyframes bounce2 {
-          0%, 100% {
-            transform: translateX(0);
-          }
-          10% {
-            transform: translateX(-10px);
-          }
-        }
       }
     }
     &:nth-child(2n) {
@@ -244,22 +228,6 @@ export default {
           bottom: -1px;
           right: 0;
           animation: bounce-l2 1s ease infinite;
-        }
-        @keyframes bounce-l {
-          0%, 100% {
-            transform: translateX(0) rotate(40deg);
-          }
-          10% {
-            transform: translateX(10px) rotate(40deg);
-          }
-        }
-        @keyframes bounce-l2 {
-          0%, 100% {
-            transform: translateX(0);
-          }
-          10% {
-            transform: translateX(10px);
-          }
         }
       }
       &.inview {
@@ -347,6 +315,43 @@ export default {
   }
 }
 
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(0) rotate(-40deg);
+  }
+  10% {
+    transform: translateX(-10px) rotate(-40deg);
+  }
+}
+@keyframes bounce2 {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-10px);
+  }
+}
+@keyframes bounce-l {
+  0%,
+  100% {
+    transform: translateX(0) rotate(40deg);
+  }
+  10% {
+    transform: translateX(10px) rotate(40deg);
+  }
+}
+@keyframes bounce-l2 {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(10px);
+  }
+}
+
 @media (max-width: 600px) {
   .container {
     & .flex-item {
@@ -359,9 +364,9 @@ export default {
       }
     }
   }
-  // .flex-title::before,
-  // .flex-title::after {
-  //   display: none;
-  // }
+  .flex-title::before,
+  .flex-title::after {
+    display: none;
+  }
 }
 </style>
