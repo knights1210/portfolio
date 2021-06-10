@@ -102,7 +102,7 @@ export default {
 <style lang="scss" scoped>
 .marker {
   background: linear-gradient(transparent 90%, rgb(255, 130, 130) 10%);
-   background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-size: 0%;
   background-position: bottom left;
   transition: all 1.7s ease;
@@ -130,7 +130,6 @@ export default {
   }
   & .about-p {
     text-align: center;
-    // padding: 10px;
     & small {
       background: linear-gradient(transparent 90%, #ff0000 10%);
       background-size: 0;
@@ -141,7 +140,6 @@ export default {
       color: lightgray;
       &.inview {
         background-size: 100%;
-
       }
     }
   }
@@ -163,10 +161,7 @@ export default {
         position: absolute;
         content: "";
         background-color: black;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        inset: 0;
         opacity: 0;
       }
       &.inview {
@@ -181,11 +176,12 @@ export default {
     }
     &:nth-child(2n + 1) {
       & .flex-title {
+        margin: 1rem;
         text-align: center;
         font-weight: normal;
         border-bottom: 1px solid white;
         position: relative;
-        &::after {
+        &::before {
           content: "";
           position: absolute;
           bottom: 0;
@@ -194,12 +190,39 @@ export default {
           height: 6px;
           transform: rotate(-40deg);
           border-top: 1px solid white;
+          animation: bounce 1s ease infinite;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          border-bottom: 1px solid white;
+          width: 1rem;
+          bottom: -1px;
+          left: 0;
+          animation: bounce2 1s ease infinite;
+        }
+        @keyframes bounce {
+          0%, 100% {
+            transform: translateX(0) rotate(-40deg);
+          }
+          10% {
+            transform: translateX(-10px) rotate(-40deg);
+          }
+        }
+        @keyframes bounce2 {
+          0%, 100% {
+            transform: translateX(0);
+          }
+          10% {
+            transform: translateX(-10px);
+          }
         }
       }
     }
     &:nth-child(2n) {
       flex-direction: row-reverse;
       & .flex-title {
+        margin: 1rem;
         border-bottom: 1px solid white;
         position: relative;
         &::before {
@@ -211,6 +234,32 @@ export default {
           height: 6px;
           transform: rotate(40deg);
           border-top: 1px solid white;
+          animation: bounce-l 1s ease infinite;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          border-bottom: 1px solid white;
+          width: 1rem;
+          bottom: -1px;
+          right: 0;
+          animation: bounce-l2 1s ease infinite;
+        }
+        @keyframes bounce-l {
+          0%, 100% {
+            transform: translateX(0) rotate(40deg);
+          }
+          10% {
+            transform: translateX(10px) rotate(40deg);
+          }
+        }
+        @keyframes bounce-l2 {
+          0%, 100% {
+            transform: translateX(0);
+          }
+          10% {
+            transform: translateX(10px);
+          }
         }
       }
       &.inview {
@@ -309,6 +358,10 @@ export default {
         flex-direction: column;
       }
     }
+  }
+  .flex-title::before,
+  .flex-title::after {
+    display: none;
   }
 }
 </style>

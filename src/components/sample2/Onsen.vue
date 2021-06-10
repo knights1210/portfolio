@@ -1,32 +1,51 @@
 <template>
   <div class="container">
-    <h2 class="onsen-h2">Onsen</h2>
-    <h3 class="onsen-h3">温泉</h3>
-    <p class="onsen-p">当旅館の温泉をご紹介いたします。</p>
-    <p class="onsen-p">
+    <div class="parent">
+      <h2 class="onsen-h2 underline text-center">Onsen</h2>
+    </div>
+    <h3 class="onsen-h3 text-center">温泉</h3>
+    <p class="onsen-p text-center">当旅館の温泉をご紹介いたします。</p>
+    <p class="onsen-p text-center">
       当旅館の温泉の効能<br />
-      <span class="marker">疲労回復・神経痛・筋肉痛・肩こり・腰痛・ストレス解消・便秘・神経マヒ・リウマチ性疾患・健康増進・美肌効果</span>
+      <span class="marker"
+        >疲労回復・神経痛・筋肉痛・肩こり・腰痛・ストレス解消・便秘・神経マヒ・リウマチ性疾患・健康増進・美肌効果</span
+      >
     </p>
     <div class="onsen-item">
       <img src="@/assets/img/sample2/onsen/onsen1.jpg" alt="" />
-      <p class="onsen-item-p">
-        大自然を感じながら楽しむ露天風呂。<br />
-        春には桜、夏には豊かな緑、秋には紅葉、冬には雪化粧された山々...。<br />
-        四季を感じながらゆっくり出来ます。<br />
-      </p>
+      <div class="onsen-item-ps">
+        <h3 class="onsen-item-title underline text-center">露天風呂</h3>
+        <p class="onsen-item-p">
+          大自然を感じながら楽しむ露天風呂。<br />
+          春には桜、夏には豊かな緑、秋には紅葉、冬には雪化粧された山々...。<br />
+          四季を感じながらゆっくり出来ます。<br />
+        </p>
+      </div>
     </div>
     <div class="onsen-item">
       <img src="@/assets/img/sample2/onsen/onsen2.jpg" alt="" />
-      <p class="onsen-item-p">各お部屋にもある露天風呂。<br>
-     源泉から引いたもので、お部屋から出ずに<br>
-     檜風呂で温泉を楽しむことも出来ます。<br>
-     こちらも大自然を感じながら入浴できます。</p>
+      <div class="onsen-item-ps">
+        <h3 class="onsen-item-title underline text-center">
+          各お部屋設置の露天風呂
+        </h3>
+        <p class="onsen-item-p">
+          各お部屋にもある露天風呂。<br />
+          源泉から引いたもので、お部屋から出ずに<br />
+          檜風呂で温泉を楽しむことも出来ます。<br />
+          こちらも大自然を感じながら入浴できます。
+        </p>
+      </div>
     </div>
     <div class="onsen-item">
       <img src="@/assets/img/sample2/onsen/onsen3.jpg" alt="" />
-      <p class="onsen-item-p">足湯もご用意しております。<br>
-      疲れた足を癒すことが出来ます。<br>
-      春にはご覧の通り花見をしながら足湯を楽しめます。</p>
+      <div class="onsen-item-ps">
+        <h3 class="onsen-item-title underline text-center">足湯</h3>
+        <p class="onsen-item-p">
+          足湯もご用意しております。<br />
+          疲れた足を癒すことが出来ます。<br />
+          春にはご覧の通り花見をしながら足湯を楽しめます。
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -60,7 +79,8 @@ export default {
 
 <style lang="scss" scoped>
 .marker {
-   background: linear-gradient(transparent 90%, #fc0 10%);
+  font-size: 0.8rem;
+  background: linear-gradient(transparent 90%, #fc0 10%);
   background-repeat: no-repeat;
   background-size: 0;
   background-position: bottom left;
@@ -73,21 +93,27 @@ export default {
 .underline {
   text-decoration: underline;
 }
+
+.text-center {
+  text-align: center;
+}
 .container {
   color: white;
   text-shadow: #fc0 1px 0 5px;
   max-width: 1100px;
   margin: 0 auto;
-  & .onsen-h2 {
+  & .parent {
     text-align: center;
-    text-decoration: underline;
+    & .onsen-h2 {
+      display: inline-block;
+      // background: red;
+      padding: 0 10px;
+    }
   }
   & .onsen-h3 {
-    text-align: center;
     margin-bottom: 10px;
   }
   & .onsen-p {
-    text-align: center;
   }
 
   & .onsen-item {
@@ -104,13 +130,23 @@ export default {
     & img {
       width: 50%;
     }
-    & .onsen-item-p {
-      font-size: 0.9rem;
-      padding: 10px;
+    & .onsen-item-ps {
+      width: 100%;
+      & .onsen-item-title {
+        border-bottom: 1px solid white;
+        margin: 0 auto;
+        width: 80%;
+        padding: 0.5rem;
+      }
+      & .onsen-item-p {
+        width: 80%;
+        margin: 0 auto;
+        font-size: 0.9rem;
+        padding: 10px;
+      }
     }
   }
 }
-
 
 @media (max-width: 600px) {
   .container {

@@ -112,6 +112,7 @@ export default {
 @media (max-width: 600px) {
   .component2 {
     margin-top: 0;
+    background-position: 30% bottom;
     & .container {
       & .transition {
         bottom: 35%;
