@@ -359,9 +359,9 @@ export default {
       }
     }
   }
-  .flex-title::before,
-  .flex-title::after {
-    display: none;
-  }
+  // .flex-title::before,
+  // .flex-title::after {
+  //   display: none;
+  // }
 }
 </style>
