@@ -102,19 +102,19 @@ export default {
   text-shadow: #fc0 1px 0 5px;
   max-width: 1100px;
   margin: 0 auto;
+  overflow: hidden;
   & .parent {
     text-align: center;
     & .onsen-h2 {
       display: inline-block;
-      // background: red;
       padding: 0 10px;
     }
   }
   & .onsen-h3 {
     margin-bottom: 10px;
   }
-  & .onsen-p {
-  }
+  // & .onsen-p {
+  // }
 
   & .onsen-item {
     display: flex;

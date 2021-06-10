@@ -336,6 +336,7 @@ export default {
     transform: translateX(-10px);
   }
 }
+
 @keyframes bounce-l {
   0%,
   100% {
