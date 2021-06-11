@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="parent">
-      <h2 class="onsen-h2 underline text-center">Onsen</h2>
+      <h2 class="onsen-h2 text-center">Onsen</h2>
     </div>
     <h3 class="onsen-h3 text-center">温泉</h3>
     <p class="onsen-p text-center">当旅館の温泉をご紹介いたします。</p>
@@ -51,28 +51,33 @@
 </template>
 
 <script>
+import splitText from "../../plugins/textSplit";
+import ScrollObserver from "../../plugins/scroll";
 export default {
   mounted() {
-    const options = {
-      root: null,
-      rootMargin: "-100px",
-      threshold: 0,
-    };
-    const slideItems = document.querySelectorAll(".onsen-item, .marker");
-    slideItems.forEach((target) => this.onIntersect(target, options));
+    splitText(".onsen-h2");
+    ScrollObserver(".onsen-item, .marker, .char");
+
+    // const options = {
+    //   root: null,
+    //   rootMargin: "-100px",
+    //   threshold: 0,
+    // };
+    // const slideItems = document.querySelectorAll(".onsen-item, .marker");
+    // slideItems.forEach((target) => this.onIntersect(target, options));
   },
   methods: {
-    onIntersect(target, options) {
-      const observer = new IntersectionObserver(this.addClass, options);
-      observer.observe(target);
-    },
-    addClass(entries) {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("inview");
-        }
-      }
-    },
+    //   onIntersect(target, options) {
+    //     const observer = new IntersectionObserver(this.addClass, options);
+    //     observer.observe(target);
+    //   },
+    //   addClass(entries) {
+    //     for (const entry of entries) {
+    //       if (entry.isIntersecting) {
+    //         entry.target.classList.add("inview");
+    //       }
+    //     }
+    //   },
   },
 };
 </script>
@@ -108,6 +113,18 @@ export default {
     & .onsen-h2 {
       display: inline-block;
       padding: 0 10px;
+      & ::v-deep .char {
+        display: inline-block;
+        opacity: 0;
+        &.inview {
+          animation: drop 2s ease forwards;
+        }
+        @for $i from 1 through 5 {
+          &:nth-child(#{$i}) {
+            animation-delay: $i * 0.08s;
+          }
+        }
+      }
     }
   }
   & .onsen-h3 {
@@ -145,6 +162,21 @@ export default {
         padding: 10px;
       }
     }
+  }
+}
+@keyframes drop {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+    text-decoration: underline;
   }
 }
 

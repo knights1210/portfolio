@@ -88,11 +88,15 @@
 
 <script>
 import LightBox from "vue-image-lightbox";
+import splitText from "../../plugins/textSplit";
+import ScrollObserver from "../../plugins/scroll";
+
 require("vue-image-lightbox/dist/vue-image-lightbox.min.css");
 export default {
   components: {
     LightBox,
   },
+
   data() {
     return {
       images: [
@@ -121,6 +125,9 @@ export default {
     };
   },
   mounted() {
+    splitText(".room-h2");
+    ScrollObserver("small, .char");
+
     const els = document.querySelector("small");
     const cb = function(entries) {
       entries.forEach((entry) => {
@@ -153,7 +160,18 @@ export default {
   margin: 0 auto;
   & .room-h2 {
     text-align: center;
-    text-decoration: underline;
+    & ::v-deep .char {
+      display: inline-block;
+      opacity: 0;
+      &.inview {
+        animation: drop 2s ease forwards;
+        @for $i from 1 through 5 {
+          &.inview:nth-child(#{$i}) {
+            animation-delay: $i * 0.08s;
+          }
+        }
+      }
+    }
   }
   & .room-h3 {
     text-align: center;
@@ -219,6 +237,21 @@ export default {
       font-size: 14px;
       margin: 0;
     }
+  }
+}
+@keyframes drop {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+    text-decoration: underline;
   }
 }
 

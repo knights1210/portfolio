@@ -68,34 +68,20 @@
 </template>
 
 <script>
+import splitText from "../../plugins/textSplit";
+import ScrollObserver from "../../plugins/scroll";
+
 export default {
   name: "AboutUs",
   data() {
     return {};
   },
-  mounted() {
-    const options = {
-      root: null,
-      rootMargin: "-100px",
-      threshold: 0,
-    };
 
-    const flexItems = document.querySelectorAll(".flex-item, small, .marker");
-    flexItems.forEach((target) => this.onIntersect(target, options));
+  mounted() {
+    splitText(".about-h2");
+    ScrollObserver(".flex-item, small, .marker, .char");
   },
-  methods: {
-    onIntersect(target, options) {
-      const observer = new IntersectionObserver(this.addClass, options);
-      observer.observe(target);
-    },
-    addClass(entries) {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("inview");
-        }
-      }
-    },
-  },
+  methods: {},
 };
 </script>
 
@@ -111,6 +97,7 @@ export default {
     background-size: 100%;
   }
 }
+
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -118,7 +105,19 @@ export default {
   text-shadow: #fc0 1px 0 5px;
   & .about-h2 {
     text-align: center;
-    text-decoration: underline white;
+    & ::v-deep .char {
+      display: inline-block;
+
+      opacity: 0;
+      &.inview {
+        animation: drop 2s ease forwards;
+      }
+      @for $i from 1 through 8 {
+        &.inview:nth-child(#{$i}) {
+          animation-delay: $i * 0.08s;
+        }
+      }
+    }
   }
   & hr {
     margin: 10px auto;
@@ -268,7 +267,22 @@ export default {
     }
   }
 }
+@keyframes drop {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+    text-decoration: underline;
+  }
+}
 @keyframes slide {
   0% {
     transform-origin: left;
