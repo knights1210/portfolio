@@ -104,6 +104,7 @@ export default {
       .nav-link {
         // border-top: 1px solid black;
         width: 20%;
+        align-items: center;
       }
     }
   }
