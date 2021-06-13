@@ -33,12 +33,7 @@
             alt="和室３"
           />
         </div>
-        <LightBox
-          ref="lightbox"
-          :media="images"
-          :showLightBox="false"
-          :showThumbs="false"
-        ></LightBox>
+        
         <p class="room-item-p">
           和室の間では、実家のようにくつろげる空間をご提供。<br />
           和室の良さを現代の技術を組合わせて快適に過ごしていただけるお部屋になっております。<br />
@@ -72,6 +67,12 @@
             alt="洋室２"
           />
         </div>
+        <LightBox
+          ref="lightbox"
+          :media="images"
+          :showLightBox="false"
+          :showThumbs="false"
+        ></LightBox>
         <p class="room-item-p">
           洋室の間では、雰囲気がガラリと変わってホテルのようなお部屋になっております。<br />
           ツインベッドルーム・ダブルベッドルームをご用意しております。<br />こちらのお部屋も外の景色は大自然満載です。
@@ -186,6 +187,7 @@ export default {
     }
     &.yo {
       background: url("/room-y1.jpg") center center / cover no-repeat;
+      z-index: -1;
       & .bgimg-opc {
         z-index: -1;
         height: 100%;
