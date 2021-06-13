@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <h2 class="room-h2">Room</h2>
-    <h3 class="room-h3">当旅館のお部屋</h3>
-    <p class="room-p">当旅館のお部屋の一部をご紹介</p>
-    <p class="room-p">
+    <h2 class="room-h2 txt-center">Room</h2>
+    <h3 class="room-h3 txt-center">当旅館のお部屋</h3>
+    <p class="room-p txt-center">当旅館のお部屋の一部をご紹介</p>
+    <p class="room-p txt-center">
       <small
         >※当館は全室、空調設備完備・光触媒コーティングによる抗菌にて
         感染症対策を行っております。</small
@@ -12,7 +12,7 @@
 
     <div class="room-item wa">
       <div class="bgimg-opc">
-        <h3 class="room-title">和室の間</h3>
+        <h3 class="room-title txt-center">和室の間</h3>
         <div class="room-imgs">
           <img
             @click="showLightbox(0)"
@@ -57,7 +57,7 @@
 
     <div class="room-item yo">
       <div class="bgimg-opc">
-        <h3 class="room-title">洋室の間</h3>
+        <h3 class="room-title txt-center">洋室の間</h3>
         <div class="room-imgs-y">
           <img
             @click="showLightbox(3)"
@@ -127,22 +127,6 @@ export default {
   mounted() {
     splitText(".room-h2");
     ScrollObserver("small, .char");
-
-    const els = document.querySelector("small");
-    const cb = function(entries) {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("inview");
-        }
-      });
-    };
-    const options = {
-      root: null,
-      rootMargin: "-100px",
-      threshold: 0,
-    };
-    const io = new IntersectionObserver(cb, options);
-    io.observe(els);
   },
   methods: {
     showLightbox(index) {
@@ -159,7 +143,6 @@ export default {
   max-width: 1100px;
   margin: 0 auto;
   & .room-h2 {
-    text-align: center;
     & ::v-deep .char {
       display: inline-block;
       opacity: 0;
@@ -174,11 +157,10 @@ export default {
     }
   }
   & .room-h3 {
-    text-align: center;
     margin-bottom: 10px;
   }
   & .room-p {
-    text-align: center;
+    font-size: 0.9rem;
     & small {
       background: linear-gradient(transparent 90%, #ff0000 10%);
       background-repeat: no-repeat;
@@ -213,7 +195,6 @@ export default {
     & .room-title {
       padding-top: 10px;
       text-decoration: underline 2px;
-      text-align: center;
       font-weight: normal;
     }
     & .room-imgs {

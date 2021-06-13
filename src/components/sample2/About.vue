@@ -1,12 +1,12 @@
 <template>
   <div class="container">
-    <h2 class="about-h2">ABOUT US</h2>
+    <h2 class="about-h2 txt-center">ABOUT US</h2>
 
-    <h3 class="about-h3">当館について</h3>
-    <p class="about-p">
+    <h3 class="about-h3 txt-center">当館について</h3>
+    <p class="about-p txt-center">
       当旅館はどこにいても自然を感じられ、<br />都会の喧騒に疲れた方や、リラックスしたい方、ワーケーションなどにもおすすめです
     </p>
-    <p class="about-p">
+    <p class="about-p txt-center">
       <small
         >※当館は全室、空調設備完備・光触媒コーティングによる抗菌にて
         感染症対策を行っております。</small
@@ -15,7 +15,7 @@
     <div class="flex-item slide">
       <img class="flex-img" src="@/assets/img/sample2/sample2-1.jpg" alt="" />
       <div class="flex-ps">
-        <h3 class="flex-title">露天風呂</h3>
+        <h3 class="flex-title txt-center">露天風呂</h3>
         <p class="flex-p">
           露天風呂からは四季折々の景色、迫力のある滝を見ながらゆっくりと入浴が出来ます。泉質は鬼怒川温泉や、道後温泉と同じ単純温泉で、<br /><strong
             >[疲労回復・神経痛・筋肉痛・肩こり・腰痛・ストレス解消・便秘・神経マヒ・リウマチ性疾患・健康増進・美肌効果]</strong
@@ -31,7 +31,7 @@
         alt="露天風呂"
       />
       <div class="flex-ps">
-        <h3 class="flex-title">自然あふれる景色</h3>
+        <h3 class="flex-title txt-center">自然あふれる景色</h3>
         <p class="flex-p">
           お部屋から見える景色は自然あふれる木々<br />春には桜が咲き、夏は涼しく、秋には紅葉や虫の鳴き声でリラックス出来ます。
         </p>
@@ -45,7 +45,7 @@
         alt="お部屋からの景色"
       />
       <div class="flex-ps">
-        <h3 class="flex-title">地産地消・新鮮な魚介を使った料理</h3>
+        <h3 class="flex-title txt-center">地産地消・新鮮な魚介を使った料理</h3>
         <p class="flex-p">
           地元で取れたお野菜や、魚介を使用しているので、<br />
           すべてが採れたて新鮮!ここでしか採れない貴重な食材を使ったコースもご用意しております。
@@ -58,7 +58,7 @@
     <div class="flex-item slide">
       <img class="flex-img" src="@/assets/img/sample2/sample2-4.jpg" alt="" />
       <div class="flex-ps">
-        <h3 class="flex-title">洋室もご用意しております</h3>
+        <h3 class="flex-title txt-center">洋室もご用意しております</h3>
         <p class="flex-p">
           海外からのお客様や、布団では寝られないお客様に合わせて洋室もご用意しております。
         </p>
@@ -104,10 +104,8 @@ export default {
   color: white;
   text-shadow: #fc0 1px 0 5px;
   & .about-h2 {
-    text-align: center;
     & ::v-deep .char {
       display: inline-block;
-
       opacity: 0;
       &.inview {
         animation: drop 2s ease forwards;
@@ -124,11 +122,10 @@ export default {
   }
 
   & .about-h3 {
-    text-align: center;
     margin-bottom: 10px;
   }
   & .about-p {
-    text-align: center;
+    font-size: 0.9rem;
     & small {
       background: linear-gradient(transparent 90%, #ff0000 10%);
       background-size: 0;
@@ -148,10 +145,10 @@ export default {
     overflow: hidden;
     opacity: 0;
     &.inview {
-      animation-name: flex-show;
-      animation-duration: 1.6s;
-      animation-timing-function: ease-in-out;
-      animation-fill-mode: forwards;
+      animation: flex-show 1.6s ease-in-out forwards;
+      // animation-duration: 1.6s;
+      // animation-timing-function: ease-in-out;
+      // animation-fill-mode: forwards;
     }
     &.slide {
       position: relative;
@@ -169,17 +166,13 @@ export default {
       &.inview {
         &::after {
           opacity: 1;
-          animation-name: slide;
-          animation-duration: 1.6s;
-          animation-timing-function: ease-in-out;
-          animation-fill-mode: forwards;
+          animation: slide 1.6s ease-in-out forwards;
         }
       }
     }
     &:nth-child(2n + 1) {
       & .flex-title {
         margin: 1rem;
-        text-align: center;
         font-weight: normal;
         border-bottom: 1px solid white;
         position: relative;
@@ -235,11 +228,7 @@ export default {
       &.inview {
         &::after {
           opacity: 1;
-          animation-name: slide;
-          animation-duration: 1.6s;
-          animation-timing-function: ease-in-out;
-          animation-direction: reverse;
-          animation-fill-mode: forwards;
+          animation: slide 1.6s ease-in-out reverse forwards;
         }
       }
     }
@@ -248,15 +237,11 @@ export default {
     }
     &.inview .flex-img {
       opacity: 1;
-      animation-name: img-show;
-      animation-duration: 1.6s;
-      animation-timing-function: ease-in-out;
-      animation-fill-mode: forwards;
+      animation: img-show 1.6s ease-in-out forwards;
     }
     & .flex-ps {
       width: 100%;
       & .flex-title {
-        text-align: center;
         font-weight: normal;
         border-bottom: 1px solid white;
       }
@@ -275,6 +260,7 @@ export default {
   20% {
     transform: translateY(0px);
     opacity: 1;
+    
   }
 
   100% {

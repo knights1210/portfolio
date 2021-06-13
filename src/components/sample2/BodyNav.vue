@@ -2,30 +2,34 @@
   <div class="container">
     <div class="body-nav">
       <router-link
-        class="nav-link"
+        class="nav-link txt-center"
         active-class="link-active"
         exact
         :to="{ name: 'about' }"
         >About Us</router-link
       >
       <router-link
-        class="nav-link"
+        class="nav-link txt-center"
         active-class="link-active"
         exact
         :to="{ name: 'room' }"
         >Room</router-link
       >
       <router-link
-        class="nav-link"
+        class="nav-link txt-center"
         active-class="link-active"
         exact
         :to="{ name: 'onsen' }"
         >Onsen</router-link
       >
-      <router-link class="nav-link" active-class="link-active" exact to="/"
-        >お食事</router-link
+      <router-link
+        class="nav-link txt-center"
+        active-class="link-active"
+        exact
+        :to="{ name: 'foods' }"
+        >Foods</router-link
       >
-      <router-link class="nav-link" active-class="link-active" exact to="/"
+      <router-link class="nav-link txt-center" active-class="link-active" exact to="/"
         >プラン</router-link
       >
     </div>
@@ -54,9 +58,9 @@ export default {
     justify-content: center;
     display: flex;
     & .nav-link {
+      border-top: 1px solid black;
       text-decoration: none;
       transition: all 0.5s ease;
-      text-align: center;
       width: 150px;
       padding: 5px;
       list-style: none;
@@ -95,11 +99,11 @@ export default {
 @media (max-width: 600px) {
   .container {
     .body-nav {
-      flex-direction: column;
+      // flex-direction: column;
       padding: 0;
       .nav-link {
-        border-top: 1px solid black;
-        width: 100%;
+        // border-top: 1px solid black;
+        width: 20%;
       }
     }
   }

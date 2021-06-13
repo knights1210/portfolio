@@ -28,6 +28,12 @@ export default {
 };
 </script>
 
+<style lang="scss">
+  .txt-center {
+    text-align: center;
+  }
+</style>
+
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Kameron&display=swap");
 .bg-black {
@@ -115,12 +121,12 @@ export default {
     background-position: 30% bottom;
     & .container {
       & .transition {
-        bottom: 35%;
+        bottom: 41%;
         left: 46%;
         margin: 0;
       }
       & .fa-long-arrow-alt-down {
-        bottom: 30%;
+        bottom: 35%;
         // left: 50%;
         // transform: translateX(-50%);
       }

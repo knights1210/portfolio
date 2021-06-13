@@ -1,11 +1,10 @@
 <template>
   <div class="container">
-    <div class="parent">
-      <h2 class="onsen-h2 text-center">Onsen</h2>
-    </div>
-    <h3 class="onsen-h3 text-center">温泉</h3>
-    <p class="onsen-p text-center">当旅館の温泉をご紹介いたします。</p>
-    <p class="onsen-p text-center">
+    <h2 class="onsen-h2 txt-center">Onsen</h2>
+
+    <h3 class="onsen-h3 txt-center">温泉</h3>
+    <p class="onsen-p txt-center">当旅館の温泉をご紹介いたします。</p>
+    <p class="onsen-p txt-center">
       当旅館の温泉の効能<br />
       <span class="marker"
         >疲労回復・神経痛・筋肉痛・肩こり・腰痛・ストレス解消・便秘・神経マヒ・リウマチ性疾患・健康増進・美肌効果</span
@@ -14,7 +13,7 @@
     <div class="onsen-item">
       <img src="@/assets/img/sample2/onsen/onsen1.jpg" alt="" />
       <div class="onsen-item-ps">
-        <h3 class="onsen-item-title underline text-center">露天風呂</h3>
+        <h3 class="onsen-item-title underline txt-center">露天風呂</h3>
         <p class="onsen-item-p">
           大自然を感じながら楽しむ露天風呂。<br />
           春には桜、夏には豊かな緑、秋には紅葉、冬には雪化粧された山々...。<br />
@@ -25,7 +24,7 @@
     <div class="onsen-item">
       <img src="@/assets/img/sample2/onsen/onsen2.jpg" alt="" />
       <div class="onsen-item-ps">
-        <h3 class="onsen-item-title underline text-center">
+        <h3 class="onsen-item-title underline txt-center">
           各お部屋設置の露天風呂
         </h3>
         <p class="onsen-item-p">
@@ -39,7 +38,7 @@
     <div class="onsen-item">
       <img src="@/assets/img/sample2/onsen/onsen3.jpg" alt="" />
       <div class="onsen-item-ps">
-        <h3 class="onsen-item-title underline text-center">足湯</h3>
+        <h3 class="onsen-item-title underline txt-center">足湯</h3>
         <p class="onsen-item-p">
           足湯もご用意しております。<br />
           疲れた足を癒すことが出来ます。<br />
@@ -57,28 +56,8 @@ export default {
   mounted() {
     splitText(".onsen-h2");
     ScrollObserver(".onsen-item, .marker, .char");
-
-    // const options = {
-    //   root: null,
-    //   rootMargin: "-100px",
-    //   threshold: 0,
-    // };
-    // const slideItems = document.querySelectorAll(".onsen-item, .marker");
-    // slideItems.forEach((target) => this.onIntersect(target, options));
   },
-  methods: {
-    //   onIntersect(target, options) {
-    //     const observer = new IntersectionObserver(this.addClass, options);
-    //     observer.observe(target);
-    //   },
-    //   addClass(entries) {
-    //     for (const entry of entries) {
-    //       if (entry.isIntersecting) {
-    //         entry.target.classList.add("inview");
-    //       }
-    //     }
-    //   },
-  },
+  methods: {},
 };
 </script>
 
@@ -99,39 +78,35 @@ export default {
   text-decoration: underline;
 }
 
-.text-center {
-  text-align: center;
-}
 .container {
   color: white;
   text-shadow: #fc0 1px 0 5px;
   max-width: 1100px;
   margin: 0 auto;
   overflow: hidden;
-  & .parent {
-    text-align: center;
-    & .onsen-h2 {
+
+  & .onsen-h2 {
+    
+    & ::v-deep .char {
       display: inline-block;
-      padding: 0 10px;
-      & ::v-deep .char {
-        display: inline-block;
-        opacity: 0;
-        &.inview {
-          animation: drop 2s ease forwards;
-        }
-        @for $i from 1 through 5 {
-          &:nth-child(#{$i}) {
-            animation-delay: $i * 0.08s;
-          }
+      opacity: 0;
+      &.inview {
+        animation: drop 2s ease forwards;
+      }
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          animation-delay: $i * 0.08s;
         }
       }
     }
   }
+
   & .onsen-h3 {
     margin-bottom: 10px;
   }
-  // & .onsen-p {
-  // }
+  & .onsen-p {
+    font-size: 0.9rem;
+  }
 
   & .onsen-item {
     display: flex;
