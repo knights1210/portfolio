@@ -186,8 +186,8 @@ export default {
     }
     &.yo {
       background: url("/room-y1.jpg") center center / cover no-repeat;
-      z-index: -1;
       & .bgimg-opc {
+        z-index: -1;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.6);
         backdrop-filter: blur(2.5px);
