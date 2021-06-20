@@ -25,6 +25,9 @@ export default {
   components: {
     BodyNav,
   },
+  mounted() {
+    this.$router.push({path:'component2/about'});
+  }
 };
 </script>
 

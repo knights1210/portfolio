@@ -29,7 +29,11 @@
         :to="{ name: 'foods' }"
         >Foods</router-link
       >
-      <router-link class="nav-link txt-center" active-class="link-active" exact to="/"
+      <router-link
+        class="nav-link txt-center"
+        active-class="link-active"
+        exact
+        to="/"
         >プラン</router-link
       >
     </div>
@@ -99,10 +103,8 @@ export default {
 @media (max-width: 600px) {
   .container {
     .body-nav {
-      // flex-direction: column;
       padding: 0;
       .nav-link {
-        // border-top: 1px solid black;
         width: 20%;
         align-items: center;
       }
