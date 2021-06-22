@@ -43,6 +43,8 @@
           定員<br />
           ２～４名様
         </p>
+        <p class="room-item-p">料金<br>
+        お一人様：16,000～</p>
         <p class="room-item-p">
           設備等<br />
           テレビ／冷蔵庫／冷暖房／床暖房／空気清浄機／お風呂／洗面台／トイレ
@@ -78,6 +80,8 @@
           ツインベッドルーム・ダブルベッドルームをご用意しております。<br />こちらのお部屋も外の景色は大自然満載です。
         </p>
         <p class="room-item-p">定員<br />2名様を想定</p>
+        <p class="room-item-p">料金<br>
+        お一人様：16,000～</p>
         <p class="room-item-p">
           設備等<br />
           テレビ／冷蔵庫／冷暖房／床暖房／空気清浄機／お風呂／洗面台／トイレ
@@ -231,6 +235,7 @@ export default {
   20% {
     transform: translateY(0px);
     opacity: 1;
+    
   }
   100% {
     transform: translateY(0px);

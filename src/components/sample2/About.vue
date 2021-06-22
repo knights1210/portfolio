@@ -260,7 +260,6 @@ export default {
   20% {
     transform: translateY(0px);
     opacity: 1;
-    
   }
 
   100% {

@@ -34,7 +34,7 @@
         active-class="link-active"
         exact
         to="/"
-        >プラン</router-link
+        >アクセス</router-link
       >
     </div>
     <hr />

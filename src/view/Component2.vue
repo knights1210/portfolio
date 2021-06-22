@@ -1,6 +1,6 @@
 <template>
   <div class="bg-black">
-    <div class="component2">
+    <div class="component2 txt-center">
       <div class="container">
         <p class="transition">Scroll</p>
         <font-awesome-icon class="fa-long-arrow-alt-down" icon="arrow-down" />
@@ -14,27 +14,31 @@
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import BodyNav from "../components/sample2/BodyNav.vue";
+import Footer from "../components/sample2/Component2-Footer.vue";
+
 
 export default {
   name: "Component2",
   components: {
     BodyNav,
+    Footer,
   },
   mounted() {
-    this.$router.push({path:'component2/about'});
-  }
+    this.$router.push({ path: "component2/about" });
+  },
 };
 </script>
 
 <style lang="scss">
-  .txt-center {
-    text-align: center;
-  }
+.txt-center {
+  text-align: center;
+}
 </style>
 
 <style lang="scss" scoped>
@@ -74,23 +78,23 @@ export default {
     }
   }
   & .top-content {
+    display: inline-block;
     margin-top: 20%;
     width: auto;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    padding: 5px;
+    backdrop-filter: blur(2.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     & h1 {
       font-size: 3rem;
       font-family: "Kameron", serif;
       text-shadow: 1px 1px 0 white;
     }
     & p {
-      display: inline-block;
       text-shadow: 3px 3px 1px lightgray;
       font-size: 1.125rem;
-      background-color: rgba(255, 255, 255, 0.15);
-      border-radius: 5px;
-      padding: 5px;
-      backdrop-filter: blur(2.5px);
-      border: 1px solid rgba(255, 255, 255, 0.18);
     }
   }
 }
