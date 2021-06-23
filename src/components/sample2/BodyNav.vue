@@ -34,7 +34,7 @@
         active-class="link-active"
         exact
         to="/"
-        >アクセス</router-link
+        >Gallery</router-link
       >
     </div>
     <hr />

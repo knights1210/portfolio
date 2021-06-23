@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" id="about">
     <h2 class="about-h2 txt-center">ABOUT US</h2>
 
     <h3 class="about-h3 txt-center">当館について</h3>
@@ -78,8 +78,13 @@ export default {
   },
 
   mounted() {
+    const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  };
     splitText(".about-h2");
-    ScrollObserver(".flex-item, small, .marker, .char");
+    ScrollObserver(".flex-item, small, .marker, .char", options);
   },
   methods: {},
 };

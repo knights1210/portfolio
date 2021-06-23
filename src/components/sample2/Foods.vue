@@ -22,7 +22,6 @@
       </div>
     </div>
 
-    <hr />
 
     <div class="flex-item">
       <img
@@ -39,7 +38,6 @@
       </div>
     </div>
 
-    <hr />
 
     <div class="flex-item">
       <img
@@ -57,7 +55,6 @@
       </div>
     </div>
 
-    <hr />
 
     <div class="flex-item">
       <img
@@ -82,8 +79,13 @@ import ScrollObserver from "../../plugins/scroll";
 
 export default {
   mounted() {
+    const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.3,
+  };
     splitText(".foods-h2");
-    ScrollObserver(".char");
+    ScrollObserver(".char, .flex-item", options);
   },
 };
 </script>
@@ -118,6 +120,13 @@ export default {
     display: flex;
     padding: 20px;
     margin-bottom: 10px;
+    transition: all 0.7s ease-in-out;
+    transform: translateY(30px);
+    opacity: 0;
+    &.inview {
+      transform: translateY(0px);
+      opacity: 1;
+    }
     & .flex-img {
       width: 50%;
     }

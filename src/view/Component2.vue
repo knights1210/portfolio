@@ -14,14 +14,14 @@
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
-    <Footer></Footer>
+    <Footer>
+    </Footer>
   </div>
 </template>
 
 <script>
 import BodyNav from "../components/sample2/BodyNav.vue";
-import Footer from "../components/sample2/Component2-Footer.vue";
-
+import Footer from "../components/sample2/Component2Footer.vue";
 
 export default {
   name: "Component2",
@@ -29,6 +29,7 @@ export default {
     BodyNav,
     Footer,
   },
+
   mounted() {
     this.$router.push({ path: "component2/about" });
   },

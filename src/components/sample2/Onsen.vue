@@ -54,8 +54,13 @@ import splitText from "../../plugins/textSplit";
 import ScrollObserver from "../../plugins/scroll";
 export default {
   mounted() {
+    const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  };
     splitText(".onsen-h2");
-    ScrollObserver(".onsen-item, .marker, .char");
+    ScrollObserver(".onsen-item, .marker, .char", options);
   },
   methods: {},
 };
