@@ -33,8 +33,8 @@
         class="nav-link txt-center"
         active-class="link-active"
         exact
-        to="/"
-        >Gallery</router-link
+        :to="{ name: 'plan' }"
+        >Plan</router-link
       >
     </div>
     <hr />

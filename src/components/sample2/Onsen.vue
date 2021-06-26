@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <h2 class="onsen-h2 txt-center">Onsen</h2>
-
     <h3 class="onsen-h3 txt-center">温泉</h3>
     <p class="onsen-p txt-center">当旅館の温泉をご紹介いたします。</p>
     <p class="onsen-p txt-center">
@@ -107,7 +106,7 @@ export default {
   }
 
   & .onsen-h3 {
-    margin-bottom: 10px;
+     margin-bottom: 0.8rem;
   }
   & .onsen-p {
     font-size: 0.9rem;

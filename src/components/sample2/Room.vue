@@ -33,6 +33,12 @@
             alt="和室３"
           />
         </div>
+        <LightBox
+          ref="lightbox"
+          :media="images"
+          :showLightBox="false"
+          :showThumbs="false"
+        ></LightBox>
         
         <p class="room-item-p">
           和室の間では、実家のようにくつろげる空間をご提供。<br />
@@ -69,12 +75,7 @@
             alt="洋室２"
           />
         </div>
-        <LightBox
-          ref="lightbox"
-          :media="images"
-          :showLightBox="false"
-          :showThumbs="false"
-        ></LightBox>
+        
         <p class="room-item-p">
           洋室の間では、雰囲気がガラリと変わってホテルのようなお部屋になっております。<br />
           ツインベッドルーム・ダブルベッドルームをご用意しております。<br />こちらのお部屋も外の景色は大自然満載です。
@@ -92,9 +93,12 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import LightBox from "vue-image-lightbox";
 import splitText from "../../plugins/textSplit";
 import ScrollObserver from "../../plugins/scroll";
+import VueLazyload from 'vue-lazyload';
+Vue.use(VueLazyload)
 
 require("vue-image-lightbox/dist/vue-image-lightbox.min.css");
 export default {
@@ -162,7 +166,7 @@ export default {
     }
   }
   & .room-h3 {
-    margin-bottom: 10px;
+     margin-bottom: 0.8rem;
   }
   & .room-p {
     font-size: 0.9rem;

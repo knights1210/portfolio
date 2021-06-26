@@ -7,6 +7,7 @@ import About from "./components/sample2/About.vue";
 import Room from "./components/sample2/Room.vue";
 import Onsen from "./components/sample2/Onsen.vue";
 import Foods from "./components/sample2/Foods.vue";
+import Plan from "./components/sample2/Plan.vue";
 import TopPage from "./view/Top.vue";
 import NotFound from "./components/NotFound.vue";
 
@@ -40,6 +41,11 @@ export default new Router({
           path: "foods",
           name: "foods",
           component: Foods,
+        },
+        {
+          path: "plan",
+          name: "plan",
+          component: Plan,
         },
       ],
     },

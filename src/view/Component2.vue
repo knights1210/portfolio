@@ -37,6 +37,9 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+  font-family:  "kameron","meiryo", "hiragino kaku Gothic ProN",sans-serif;
+}
 .txt-center {
   text-align: center;
 }
