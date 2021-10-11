@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <router-link to="/" exact><h1>My Port Folio</h1></router-link>
-    <p>駆け出しエンジニア</p>
+    <!-- <p>駆け出しエンジニア</p> -->
     <ul class="menu">
       <li>
         <v-btn
@@ -58,7 +58,7 @@ export default {
   // opacity: 0.7;
   top: 0px;
   height: 58px;
-  width: 100vw;
+  width: 100%;
   justify-content: space-between;
   letter-spacing: 2px;
   z-index: 100;
@@ -109,7 +109,7 @@ export default {
     & .menu {
       position: fixed;
       bottom: 0;
-      width: 100vw;
+      width: 100%;
       // padding-bottom: 10px;
       background-color: white;
       -webkit-backface-visibility: hidden;

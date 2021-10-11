@@ -15,30 +15,22 @@
         <h3 class="room-title txt-center">和室の間</h3>
         <div class="room-imgs">
           <img
-            @click="showLightbox(0)"
             class="room-img"
             src="@/assets/img/sample2/room/room-wa1.jpg"
             alt="和室１"
           />
           <img
-            @click="showLightbox(1)"
             class="room-img"
             src="@/assets/img/sample2/room/room-wa2.jpg"
             alt="和室２"
           />
           <img
-            @click="showLightbox(2)"
             class="room-img"
             src="@/assets/img/sample2/room/room-wa3.jpg"
             alt="和室３"
           />
         </div>
-        <LightBox
-          ref="lightbox"
-          :media="images"
-          :showLightBox="false"
-          :showThumbs="false"
-        ></LightBox>
+        
         
         <p class="room-item-p">
           和室の間では、実家のようにくつろげる空間をご提供。<br />
@@ -63,13 +55,11 @@
         <h3 class="room-title txt-center">洋室の間</h3>
         <div class="room-imgs-y">
           <img
-            @click="showLightbox(3)"
             class="room-img-y"
             src="@/assets/img/sample2/room/room-y1.jpg"
             alt="洋室１"
           />
           <img
-            @click="showLightbox(4)"
             class="room-img-y"
             src="@/assets/img/sample2/room/room-y2.jpg"
             alt="洋室２"
@@ -94,7 +84,6 @@
 
 <script>
 import Vue from 'vue'
-import LightBox from "vue-image-lightbox";
 import splitText from "../../plugins/textSplit";
 import ScrollObserver from "../../plugins/scroll";
 import VueLazyload from 'vue-lazyload';
@@ -103,7 +92,6 @@ Vue.use(VueLazyload)
 require("vue-image-lightbox/dist/vue-image-lightbox.min.css");
 export default {
   components: {
-    LightBox,
   },
 
   data() {
@@ -195,9 +183,9 @@ export default {
     }
     &.yo {
       background: url("/room-y1.jpg") center center / cover no-repeat;
-      z-index: -1;
+      z-index: 2;
       & .bgimg-opc {
-        z-index: -1;
+        z-index: 2;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.6);
         backdrop-filter: blur(2.5px);

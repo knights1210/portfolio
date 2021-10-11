@@ -18,7 +18,10 @@
 
     <main>
       <h2 class="sub-title">PHOTO GALLERY</h2>
-      <div class="main-content" :style="{'background-image': 'url(' + bgImage +')' }">
+      <div
+        class="main-content"
+        :style="{ 'background-image': 'url(' + bgImage + ')' }"
+      >
         <template v-for="(content, i) in contents">
           <div class="card" :key="i">
             <div class="item-name">{{ content.name }}</div>
@@ -43,7 +46,7 @@
         </template>
       </div>
     </main>
-    <grid-layout :variable="bgImage"/>
+    <grid-layout :variable="bgImage" />
   </div>
 </template>
 
@@ -55,7 +58,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default {
   mounted() {
-
     //greensock
     gsap.to(".sub-title", {
       scrollTrigger: ".sub-title",
@@ -95,7 +97,7 @@ export default {
   },
   data() {
     return {
-      bgImage: require('@/assets/img/4804246_m.jpg'),
+      bgImage: require("@/assets/img/4804246_m.jpg"),
       items: [
         { src: require("@/assets/img/slider_item/bayside_place.jpg") },
         { src: require("@/assets/img/slider_item/tower.jpg") },
