@@ -119,8 +119,8 @@ export default {
       right: -3px;
       left: -3px;
       bottom: -3px;
-      background: linear-gradient(-25deg, #00ccff, transparent, #1aff22);
-      filter: blur(5px);
+      background: linear-gradient(-40deg, #00ccff, transparent, #1aff22);
+      filter: blur(2px);
     }
     & span {
       position: absolute;
